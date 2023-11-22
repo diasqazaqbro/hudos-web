@@ -140,11 +140,11 @@
             data-anim
             class="mx-auto md-m:h-[360px] md:max-w-[67.36%] 2xl:max-w-[1440px]"
           >
-            <img
-              class="h-full w-full object-cover object-center"
-              src="./image/image-1.jpg"
-              alt="image"
-            />
+          <img
+          class="h-full w-full object-cover object-center"
+          :src= "store.fetchResult.images.i1"
+          alt="изображение"
+        />
           </div>
         </div>
       </section>
@@ -227,7 +227,7 @@
         <img
           data-anim
           class="h-full w-full object-cover object-center"
-          src="./image/image-2.jpg"
+          :src="store.fetchResult.images.i2"
           alt="image"
         />
       </div>
@@ -291,7 +291,7 @@
                 class="group flex cursor-pointer items-center justify-between border-b border-main py-5 text-main"
               >
                 <h4 class="text-xl font-bold uppercase">
-                  <span class="mr-5">01</span> <span>Innolovo</span>
+                  <span class="mr-5">01</span> <span>{{store.fetchResult.projects.designTitleOne}}</span>
                 </h4>
                 <svg
                   class="h-6 w-6 fill-main"
@@ -314,7 +314,7 @@
                 class="group flex cursor-pointer items-center justify-between border-b border-gray-light py-5 text-gray transition-colors hover:text-main"
               >
                 <h4 class="text-xl font-light uppercase">
-                  <span class="mr-5">02</span> <span>Twinbru</span>
+                  <span class="mr-5">02</span> <span>{{store.fetchResult.projects.designTitleTwo}}</span>
                 </h4>
                 <svg
                   class="hidden h-6 w-6 fill-main"
@@ -337,7 +337,7 @@
                 class="group flex cursor-pointer items-center justify-between border-b border-gray-light py-5 text-gray transition-colors hover:text-main"
               >
                 <h4 class="text-xl font-light uppercase">
-                  <span class="mr-5">03</span> <span>Beyond Studios</span>
+                  <span class="mr-5">03</span> <span>{{store.fetchResult.projects.designTitleThree}}</span>
                 </h4>
                 <svg
                   class="hidden h-6 w-6 fill-main"
@@ -360,7 +360,7 @@
                 class="group flex cursor-pointer items-center justify-between border-b border-gray-light py-5 text-gray transition-colors hover:text-main"
               >
                 <h4 class="text-xl font-light uppercase">
-                  <span class="mr-5">04</span> <span>Encounter Stories</span>
+                  <span class="mr-5">04</span> <span>{{store.fetchResult.projects.designTitleFour}}</span>
                 </h4>
                 <svg
                   class="hidden h-6 w-6 fill-main"
@@ -383,7 +383,7 @@
                 class="group flex cursor-pointer items-center justify-between border-b border-gray-light py-5 text-gray transition-colors hover:text-main"
               >
                 <h4 class="text-xl font-light uppercase">
-                  <span class="mr-5">05</span> <span>Neoplants</span>
+                  <span class="mr-5">05</span> <span>{{store.fetchResult.projects.designTitleFive}}</span>
                 </h4>
                 <svg
                   class="hidden h-6 w-6 fill-main"
@@ -408,7 +408,7 @@
                 class="group flex cursor-pointer items-center justify-between border-b border-main py-5 text-main"
               >
                 <h4 class="text-xl font-bold uppercase">
-                  <span class="mr-5">01</span> <span>Innolovo 2</span>
+                  <span class="mr-5">01</span> <span>{{store.fetchResult.projects.aTitleOne}}</span>
                 </h4>
                 <svg
                   class="h-6 w-6 fill-main"
@@ -431,7 +431,7 @@
                 class="group flex cursor-pointer items-center justify-between border-b border-gray-light py-5 text-gray transition-colors hover:text-main"
               >
                 <h4 class="text-xl font-light uppercase">
-                  <span class="mr-5">02</span> <span>Twinbru</span>
+                  <span class="mr-5">02</span> <span>{{store.fetchResult.projects.aTitleTwo}}</span>
                 </h4>
                 <svg
                   class="hidden h-6 w-6 fill-main"
@@ -454,7 +454,7 @@
                 class="group flex cursor-pointer items-center justify-between border-b border-gray-light py-5 text-gray transition-colors hover:text-main"
               >
                 <h4 class="text-xl font-light uppercase">
-                  <span class="mr-5">03</span> <span>Beyond Studios</span>
+                  <span class="mr-5">03</span> <span>{{store.fetchResult.projects.aTitleThree}}</span>
                 </h4>
                 <svg
                   class="hidden h-6 w-6 fill-main"
@@ -508,35 +508,35 @@
               <div class="swiper-slide">
                 <img
                   class="h-full w-full object-cover object-center"
-                  src="./image/slide-1-1.jpg"
+                  :src="store.fetchResult.images.i3"
                   alt="image"
                 />
               </div>
               <div class="swiper-slide">
                 <img
                   class="h-full w-full object-cover object-center"
-                  src="./image/image-1.jpg"
+                  :src="store.fetchResult.images.i4"
                   alt="image"
                 />
               </div>
               <div class="swiper-slide">
                 <img
                   class="h-full w-full object-cover object-center"
-                  src="./image/image-1.jpg"
+                  :src="store.fetchResult.images.i5"
                   alt="image"
                 />
               </div>
               <div class="swiper-slide">
                 <img
                   class="h-full w-full object-cover object-center"
-                  src="./image/image-1.jpg"
+                  :src="store.fetchResult.images.i6"
                   alt="image"
                 />
               </div>
               <div class="swiper-slide">
                 <img
                   class="h-full w-full object-cover object-center"
-                  src="./image/image-1.jpg"
+                  :src="store.fetchResult.images.i7"
                   alt="image"
                 />
               </div>
@@ -550,21 +550,21 @@
               <div class="swiper-slide">
                 <img
                   class="h-full w-full object-cover object-center"
-                  src="./image/image-1.jpg"
+                  :src="store.fetchResult.images.i8"
                   alt="image"
                 />
               </div>
               <div class="swiper-slide">
                 <img
                   class="h-full w-full object-cover object-center"
-                  src="./image/image-1.jpg"
+                  :src="store.fetchResult.images.i9"
                   alt="image"
                 />
               </div>
               <div class="swiper-slide">
                 <img
                   class="h-full w-full object-cover object-center"
-                  src="./image/slide-1-1.jpg"
+                  :src="store.fetchResult.images.i10"
                   alt="image"
                 />
               </div>
@@ -660,14 +660,12 @@
                 data-icon
                 class="absolute right-0 top-0 h-7 w-7 before:absolute before:left-1/2 before:top-1/2 before:h-[2px] before:w-4 before:-translate-x-1/2 before:-translate-y-1/2 before:rotate-90 before:rounded-full before:bg-main before:transition-transform after:absolute after:left-1/2 after:top-1/2 after:h-[2px] after:w-4 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:bg-main"
               ></span>
-              <h4 class="text-xl"></h4>
-              <p class="text-xl font-light">от 15 000 тыс. тенге за кв.м.</p>
+              <h4 class="text-xl">{{store.fetchResult.services.oneTitle}}</h4>
+              <p class="text-xl font-light">{{store.fetchResult.services.oneSupTitle}}</p>
             </div>
             <div class="max-h-0 overflow-hidden transition-all">
               <ul class="mb-5 text-xl font-light text-gray">
-                <li>Строительные чертежы</li>
-                <li>3D визуализация</li>
-                <li>Планировочное решение</li>
+                {{store.fetchResult.services.oneDesc}}
               </ul>
               <button
                 @click="store.showModal(1)"
@@ -684,14 +682,12 @@
                 data-icon
                 class="absolute right-0 top-0 h-7 w-7 before:absolute before:left-1/2 before:top-1/2 before:h-[2px] before:w-4 before:-translate-x-1/2 before:-translate-y-1/2 before:rotate-90 before:rounded-full before:bg-main before:transition-transform after:absolute after:left-1/2 after:top-1/2 after:h-[2px] after:w-4 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:bg-main"
               ></span>
-              <h4 class="text-xl">Архитектурный проект дома</h4>
-              <p class="text-xl font-light">от 7 500 тыс. тенге за кв.м.</p>
+              <h4 class="text-xl">{{store.fetchResult.services.twoTitle}}</h4>
+              <p class="text-xl font-light">{{store.fetchResult.services.twoSupTitle}}</p>
             </div>
             <div class="max-h-0 overflow-hidden transition-all">
               <ul class="mb-5 text-xl font-light text-gray">
-                <li>Комплект чертежей</li>
-                <li>3D визуализация</li>
-                <li>Инженерные сети</li>
+                {{store.fetchResult.services.twoDesc}}
               </ul>
               <button
                 @click="store.showModal(1)"
@@ -708,16 +704,12 @@
                 data-icon
                 class="absolute right-0 top-0 h-7 w-7 before:absolute before:left-1/2 before:top-1/2 before:h-[2px] before:w-4 before:-translate-x-1/2 before:-translate-y-1/2 before:rotate-90 before:rounded-full before:bg-main before:transition-transform after:absolute after:left-1/2 after:top-1/2 after:h-[2px] after:w-4 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:bg-main"
               ></span>
-              <h4 class="text-xl">Ремонт под ключ</h4>
-              <p class="text-xl font-light">70000 тыс. тенге за кв.м.</p>
+              <h4 class="text-xl">{{store.fetchResult.services.threeTitle}}</h4>
+              <p class="text-xl font-light">{{store.fetchResult.services.threeSupTitle}}</p>
             </div>
             <div class="max-h-0 overflow-hidden transition-all">
               <ul class="mb-5 text-xl font-light text-gray">
-                <li>Полный дизайн проект</li>
-                <li>Комплектация проекта</li>
-                <li>Смета на затраты</li>
-                <li>Авторский надзор проекта</li>
-                <li>Ремонтные работы нашей строительной бригады</li>
+                {{store.fetchResult.services.threeDesc}}
               </ul>
               <button
                 @click="store.showModal(1)"
@@ -734,12 +726,12 @@
                 data-icon
                 class="absolute right-0 top-0 h-7 w-7 before:absolute before:left-1/2 before:top-1/2 before:h-[2px] before:w-4 before:-translate-x-1/2 before:-translate-y-1/2 before:rotate-90 before:rounded-full before:bg-main before:transition-transform after:absolute after:left-1/2 after:top-1/2 after:h-[2px] after:w-4 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:bg-main"
               ></span>
-              <h4 class="text-xl">Авторский надзор</h4>
-              <p class="text-xl font-light">от 200.000 тыс. тенге в месяц.</p>
+              <h4 class="text-xl">{{store.fetchResult.services.fourTitle}}</h4>
+              <p class="text-xl font-light">{{store.fetchResult.services.fourSupTitle}}</p>
             </div>
             <div class="max-h-0 overflow-hidden transition-all">
               <ul class="mb-5 text-xl font-light text-gray">
-                <li>8 выездов в течении 1 месяца</li>
+                {{store.fetchResult.services.fourDesc}}
               </ul>
               <button
                 @click="store.showModal(1)"
@@ -790,56 +782,56 @@
               <div class="swiper-slide">
                 <img
                   class="h-full w-full object-cover object-center"
-                  src="./image/slide-2.jpg"
+                  :src="store.fetchResult.images.i11"
                   alt="image"
                 />
               </div>
               <div class="swiper-slide">
                 <img
                   class="h-full w-full object-cover object-center"
-                  src="./image/image-1.jpg"
+                  :src="store.fetchResult.images.i12"
                   alt="image"
                 />
               </div>
               <div class="swiper-slide">
                 <img
                   class="h-full w-full object-cover object-center"
-                  src="./image/slide-2.jpg"
+                  :src="store.fetchResult.images.i13"
                   alt="image"
                 />
               </div>
               <div class="swiper-slide">
                 <img
                   class="h-full w-full object-cover object-center"
-                  src="./image/image-1.jpg"
+                  :src="store.fetchResult.images.i14"
                   alt="image"
                 />
               </div>
               <div class="swiper-slide">
                 <img
                   class="h-full w-full object-cover object-center"
-                  src="./image/slide-2.jpg"
+                  :src="store.fetchResult.images.i15"
                   alt="image"
                 />
               </div>
               <div class="swiper-slide">
                 <img
                   class="h-full w-full object-cover object-center"
-                  src="./image/image-1.jpg"
+                  :src="store.fetchResult.images.i16"
                   alt="image"
                 />
               </div>
               <div class="swiper-slide">
                 <img
                   class="h-full w-full object-cover object-center"
-                  src="./image/slide-2.jpg"
+                  :src="store.fetchResult.images.i17"
                   alt="image"
                 />
               </div>
               <div class="swiper-slide">
                 <img
                   class="h-full w-full object-cover object-center"
-                  src="./image/image-1.jpg"
+                  :src="store.fetchResult.images.i18"
                   alt="image"
                 />
               </div>

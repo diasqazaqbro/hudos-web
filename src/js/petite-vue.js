@@ -59,6 +59,38 @@ const store = reactive({
       eightDesc: 'loading...',
     },
     welcome: { welcomeTitle: 'loading...', welcomeSupTitle: 'loading...', welcomeDesc: 'loading...'},
+    images: {
+      i1: '',
+      i2: '',
+      i3: '',
+      i4: '',
+      i5: '',
+      i6: '',
+      i7: '',
+      i8: '',
+      i9: '',
+      i10: '',
+      i11: '',
+      i12: '',
+      i13: '',
+      i14: '',
+      i15: '',
+      i16: '',
+      i17: '',
+      i18: '',
+      i19: '',
+    },
+    projects: {
+      designTitleOne: 'loading...',
+      designTitleTwo: 'loading...',
+      designTitleThree: 'loading...',
+      designTitleFour: 'loading...',
+      designTitleFive: 'loading...',
+      aTitleOne: 'loading...',
+      aTitleTwo: 'loading...',
+      aTitleThree: 'loading...',
+    }
+  
   },
   isModalOpen: false,
   anotherProject: '',
@@ -182,12 +214,93 @@ const store = reactive({
       stages.eightTitle = resp.data[0].eightTitle;
       stages.eightDesc = resp.data[0].eightDesc;
     });
+    axios.get('https://hudos-admin.vercel.app/api/projects').then((resp) => {
+      const projects = store.fetchResult.projects;
+      projects.designTitleOne = resp.data[0].designTitleOne;
+      projects.designTitleTwo = resp.data[0].designTitleTwo;
+      projects.designTitleThree = resp.data[0].designTitleThree;
+      projects.designTitleFour = resp.data[0].designTitleFour;
+      projects.designTitleFive = resp.data[0].designTitleFive;
+      projects.aTitleOne = resp.data[0].aTitleOne;
+      projects.aTitleTwo = resp.data[0].aTitleTwo;
+      projects.aTitleThree = resp.data[0].aTitleThree;
+    });
     
     axios.get('https://hudos-admin.vercel.app/api/welcome').then((resp) => {
       const welcome = store.fetchResult.welcome;
       welcome.welcomeTitle = resp.data[0].welcomeTitle;
       welcome.welcomeSupTitle = resp.data[0].welcomeSupTitle;
       welcome.welcomeDesc = resp.data[0].welcomeDesc;
+    });
+    axios.get('https://timkaqwerty.pythonanywhere.com/hds/img/?id=1').then((resp) => {
+      const images = store.fetchResult.images;
+      const path = resp.data.results.path
+      images.i1 = path;
+    });
+    axios.get('https://timkaqwerty.pythonanywhere.com/hds/img/?id=2').then((resp) => {
+      const images = store.fetchResult.images;
+      const path = resp.data.results.path
+      images.i2 = path;
+    });
+    axios.get('https://timkaqwerty.pythonanywhere.com/hds/img/?id=3').then((resp) => {
+      const images = store.fetchResult.images;
+      const path = resp.data.results.path
+      images.i3 = path;
+    });
+    axios.get('https://timkaqwerty.pythonanywhere.com/hds/img/?id=4').then((resp) => {
+      const images = store.fetchResult.images;
+      const path = resp.data.results.path
+      images.i4 = path;
+    });
+    axios.get('https://timkaqwerty.pythonanywhere.com/hds/img/?id=5').then((resp) => {
+      const images = store.fetchResult.images;
+      const path = resp.data.results.path
+      images.i5 = path;
+    });
+    axios.get('https://timkaqwerty.pythonanywhere.com/hds/img/?id=6').then((resp) => {
+      const images = store.fetchResult.images;
+      const path = resp.data.results.path
+      images.i6 = path;
+    });
+    axios.get('https://timkaqwerty.pythonanywhere.com/hds/img/?id=7').then((resp) => {
+      const images = store.fetchResult.images;
+      const path = resp.data.results.path
+      images.i7 = path;
+    });
+    axios.get('https://timkaqwerty.pythonanywhere.com/hds/img/?id=8').then((resp) => {
+      const images = store.fetchResult.images;
+      const path = resp.data.results.path
+      images.i8 = path;
+    });
+    axios.get('https://timkaqwerty.pythonanywhere.com/hds/img/?id=9').then((resp) => {
+      const images = store.fetchResult.images;
+      const path = resp.data.results.path
+      images.i9 = path;
+    });
+    axios.get('https://timkaqwerty.pythonanywhere.com/hds/img/?id=10').then((resp) => {
+      const images = store.fetchResult.images;
+      const path = resp.data.results.path
+      images.i10 = path;
+    });
+    axios.get('https://timkaqwerty.pythonanywhere.com/hds/img/?id=11').then((resp) => {
+      const images = store.fetchResult.images;
+      const path = resp.data.results.path
+      images.i11 = path;
+    });
+    axios.get('https://timkaqwerty.pythonanywhere.com/hds/img/?id=12').then((resp) => {
+      const images = store.fetchResult.images;
+      const path = resp.data.results.path
+      images.i12 = path;
+    });
+    axios.get('https://timkaqwerty.pythonanywhere.com/hds/img/?id=13').then((resp) => {
+      const images = store.fetchResult.images;
+      const path = resp.data.results.path
+      images.i13 = path;
+    });
+    axios.get('https://timkaqwerty.pythonanywhere.com/hds/img/?id=14').then((resp) => {
+      const images = store.fetchResult.images;
+      const path = resp.data.results.path
+      images.i14 = path;
     });
   },
   checkErrors(step) {
