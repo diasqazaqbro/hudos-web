@@ -302,6 +302,31 @@ const store = reactive({
       const path = resp.data.results.path
       images.i14 = path;
     });
+    axios.get('https://timkaqwerty.pythonanywhere.com/hds/img/?id=15').then((resp) => {
+      const images = store.fetchResult.images;
+      const path = resp.data.results.path
+      images.i15 = path;
+    });
+    axios.get('https://timkaqwerty.pythonanywhere.com/hds/img/?id=16').then((resp) => {
+      const images = store.fetchResult.images;
+      const path = resp.data.results.path
+      images.i16 = path;
+    });
+    axios.get('https://timkaqwerty.pythonanywhere.com/hds/img/?id=17').then((resp) => {
+      const images = store.fetchResult.images;
+      const path = resp.data.results.path
+      images.i17 = path;
+    });
+    axios.get('https://timkaqwerty.pythonanywhere.com/hds/img/?id=18').then((resp) => {
+      const images = store.fetchResult.images;
+      const path = resp.data.results.path
+      images.i18 = path;
+    });
+    axios.get('https://timkaqwerty.pythonanywhere.com/hds/img/?id=19').then((resp) => {
+      const images = store.fetchResult.images;
+      const path = resp.data.results.path
+      images.i19 = path;
+    });
   },
   checkErrors(step) {
     this.clearError()
