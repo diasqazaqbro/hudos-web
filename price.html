@@ -13,6 +13,7 @@
     />
   </head>
   <body
+  @vue:mounted="store.fetchData"
     v-scope
     :class="['relative bg-bgc text-main selection:bg-accent selection:text-white', store.isModalOpen ? 'overflow-hidden' : '']"
   >
@@ -39,14 +40,14 @@
         class="container relative flex h-full items-center justify-between md-m:max-w-full"
       >
         <a
-          href="tel:+77778092516"
+          href="tel:{{store.fetchResult.settings.number}}"
           class="group flex items-center space-x-2 transition-colors hover:underline"
         >
           <img class="md-m:h-6 md-m:w-6" src="./image/phone.svg" alt="phone" />
-          <span class="md-m:hidden">+7 (777) 8092516</span>
+          <span class="md-m:hidden">{{store.fetchResult.settings.number}}</span>
         </a>
         <a href="/" class="absolute left-1/2 w-20 shrink-0 -translate-x-1/2">
-          <img src="./image/logo.svg" alt="logo" />
+          <img :src="store.fetchResult.images.i19" alt="logo" />
         </a>
         <a
           data-mobile-open
@@ -152,16 +153,14 @@
                   </svg>
                 </div>
                 <div>
-                  <h4 class="text-xl">Дизайн квартиры</h4>
+                  <h4 class="text-xl">{{store.fetchResult.price.oneTitle}}</h4>
                   <p class="text-xl font-light text-gray">
-                    от 15 000 тыс. тенге за кв.м.
+                    {{store.fetchResult.price.oneSupTitle}}
                   </p>
                   <ul
                     class="mt-5 flex list-inside list-disc flex-col space-y-2 text-xl font-light text-gray"
                   >
-                    <li>Строительные чертежы</li>
-                    <li>3D визуализация</li>
-                    <li>Планировочное решение</li>
+                  {{store.fetchResult.price.oneDesc}}
                   </ul>
                 </div>
               </div>
@@ -214,18 +213,14 @@
                   </svg>
                 </div>
                 <div>
-                  <h4 class="text-xl">Ремонт под ключ</h4>
+                  <h4 class="text-xl">{{store.fetchResult.price.twoTitle}}</h4>
                   <p class="text-xl font-light text-gray">
-                    70000 тыс. тенге за кв.м.
+                    {{store.fetchResult.price.twoSupTitle}}
                   </p>
                   <ul
                     class="mt-5 flex list-inside list-disc flex-col space-y-2 text-xl font-light text-gray"
                   >
-                    <li>Полный дизайн проект</li>
-                    <li>Комплектация проекта</li>
-                    <li>Смета на затраты</li>
-                    <li>Авторский надзор проекта</li>
-                    <li>Ремонтные работы нашей строительной бригады</li>
+                  {{store.fetchResult.price.twoDesc}}
                   </ul>
                 </div>
               </div>
@@ -265,16 +260,14 @@
                   </svg>
                 </div>
                 <div>
-                  <h4 class="text-xl">Архитектурный проект дома</h4>
+                  <h4 class="text-xl">{{store.fetchResult.price.threeTitle}}</h4>
                   <p class="text-xl font-light text-gray">
-                    от 7 500 тыс. тенге за кв.м.
+                    {{store.fetchResult.price.threeSupTitle}}
                   </p>
                   <ul
                     class="mt-5 flex list-inside list-disc flex-col space-y-2 text-xl font-light text-gray"
                   >
-                    <li>Комплект чертежей</li>
-                    <li>3D визуализация</li>
-                    <li>Инженерные сети</li>
+                  {{store.fetchResult.price.threeDesc}}
                   </ul>
                 </div>
               </div>
@@ -302,14 +295,14 @@
                   </svg>
                 </div>
                 <div>
-                  <h4 class="text-xl">Авторский надзор</h4>
+                  <h4 class="text-xl">{{store.fetchResult.price.fourTitle}}</h4>
                   <p class="text-xl font-light text-gray">
-                    от 200.000 тыс. тенге в месяц.
+                    {{store.fetchResult.price.fourSupTitle}}
                   </p>
                   <ul
                     class="mt-5 flex list-inside list-disc flex-col space-y-2 text-xl font-light text-gray"
                   >
-                    <li>8 выездов в течении 1 месяца</li>
+                  {{store.fetchResult.price.fourDesc}}
                   </ul>
                   <button
                     @click="store.showModal(false)"
@@ -393,7 +386,7 @@
           class="flex justify-between lg-m:mb-10 lg-m:flex-wrap lg-m:space-y-10 md-m:flex-col md-m:flex-nowrap lg:items-start"
         >
           <div class="shrink-0 lg-m:w-full">
-            <img src="./image/logo.svg" alt="logo" />
+            <img :src="store.fetchResult.images.i19" alt="logo" />
           </div>
           <div class="md-m:mb-10">
             <div class="mb-5 text-xl font-light text-gray md:mb-7">Ссылки</div>
@@ -444,19 +437,18 @@
                   </div>
                   <div>
                     <div>
-                      Алматы, Горный гигант, <br />
-                      дом 55, 3 этаж
+                      {{store.fetchResult.footer.address}}
                     </div>
                     <p class="mt-2 text-gray">
-                      Время работы: с 10:00 до 20:00 <br />
-                      Выходные: воскресенье
+                      Время работы: {{store.fetchResult.footer.workTime}}<br />
+                      Выходные: {{store.fetchResult.footer.holiday}}
                     </p>
                   </div>
                 </a>
               </li>
               <li class="mb-5">
                 <a
-                  href="tel:+77778092516"
+                  href="tel:{{store.fetchResult.footer.clientNumber}}"
                   class="flex items-center transition-colors hover:text-accent"
                 >
                   <div class="mr-3 shrink-0">
@@ -467,20 +459,20 @@
                     />
                   </div>
                   <div>
-                    <div>+7 (777) 8092516</div>
+                    <div>{{store.fetchResult.footer.clientNumber}}</div>
                   </div>
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:info@testsite.kz"
+                  href="mailto:{{store.fetchResult.footer.clientEmail}}"
                   class="flex items-center transition-colors hover:text-accent"
                 >
                   <div class="mr-3 shrink-0">
                     <img class="w-4" src="./image/mail.png" alt="mail" />
                   </div>
                   <div>
-                    <div>info@testsite.kz</div>
+                    <div>{{store.fetchResult.footer.clientEmail}}</div>
                   </div>
                 </a>
               </li>
@@ -493,7 +485,7 @@
             <ul>
               <li class="mb-5">
                 <a
-                  href="tel:+77019736006"
+                  href="tel:{{store.fetchResult.footer.partnerNumber}}"
                   class="flex items-center transition-colors hover:text-accent"
                 >
                   <div class="mr-3 shrink-0">
@@ -504,20 +496,20 @@
                     />
                   </div>
                   <div>
-                    <div>+7 (701) 9736006</div>
+                    <div>{{store.fetchResult.footer.partnerNumber}}</div>
                   </div>
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:info@testsite.kz"
+                  href="mailto:{{store.fetchResult.footer.partnerEmail}}"
                   class="flex items-center transition-colors hover:text-accent"
                 >
                   <div class="mr-3 shrink-0">
                     <img class="w-4" src="./image/mail.png" alt="mail" />
                   </div>
                   <div>
-                    <div>info@testsite.kz</div>
+                    <div>{{store.fetchResult.footer.partnerEmail}}</div>
                   </div>
                 </a>
               </li>
