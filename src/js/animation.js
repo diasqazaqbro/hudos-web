@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 // Animations
-const counters = document.querySelectorAll('[data-counter]')
+const counters = document.querySelectorAll('[data-number]')
 const animationElems = document.querySelectorAll('[data-anim]')
 const header = document.querySelector('header')
 
@@ -18,20 +18,33 @@ if (header) {
   gsap.set(header, { opacity: 0 })
 }
 
-if (window.innerWidth >= 768) {
-  let tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: '#scene-1',
-      start: 'bottom bottom',
-      end: 1000,
-      pin: true,
-      scrub: true,
-    },
-  })
+// Animations iamge when user scroll
+if (window.innerWidth >= 1024) {
+  const scrollImage = document.querySelector('#scroll-image')
+  const scrollContainer = document.querySelector('#pin')
 
-  tl.to('#scroll-image', {
-    maxWidth: '100%',
-  })
+  if (scrollImage && scrollContainer) {
+    const scrollAnimationTl = gsap.timeline()
+
+    scrollAnimationTl.to(scrollImage, {
+      width: '100%',
+      ease: 'power1.inOut',
+    })
+
+    const scrollTriggerConfig = {
+      scrub: 1,
+      start: 'top center',
+      end: 'bottom center',
+      trigger: scrollContainer,
+    }
+
+    gsap
+      .timeline({
+        scrollTrigger: scrollTriggerConfig,
+        defaults: { ease: 'none', duration: 1 },
+      })
+      .add(scrollAnimationTl)
+  }
 }
 
 // Loader
@@ -46,14 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 500)
 })
 
-function animateCounter() {
-  gsap.to(counters, {
-    textContent: (indx, el) => el.dataset.counter,
-    duration: 2,
-    ease: 'expo.out',
-    snap: { textContent: 1 },
-  })
-}
 function animateFadeInElem(el) {
   gsap.to(el, {
     opacity: 1,
@@ -62,6 +67,7 @@ function animateFadeInElem(el) {
     ease: 'power4.out',
   })
 }
+
 function animateStagerElem(el) {
   gsap.to(el, {
     opacity: 1,
@@ -74,7 +80,6 @@ function animateStagerElem(el) {
 }
 
 // Observers
-const projects = document.querySelector('#projects')
 const animationStagerContainers = document.querySelectorAll(
   '[data-anim-container="stager"]'
 )
@@ -85,17 +90,6 @@ const animationFadeInContainers = document.querySelectorAll(
   '[data-anim-container="fade-in"]'
 )
 
-const projectsObserver = new IntersectionObserver(
-  (entries, observe) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        animateCounter()
-        observe.unobserve(projects)
-      }
-    })
-  },
-  { rootMargin: '0px 0px -300px 0px', threshold: 0 }
-)
 const animationContainerStartStagerObserver = new IntersectionObserver(
   (entries, observe) => {
     entries.forEach((entry) => {
@@ -129,10 +123,6 @@ const animationContainerFadeInObserver = new IntersectionObserver(
   },
   { threshold: 0 }
 )
-
-if (projects) {
-  projectsObserver.observe(projects)
-}
 
 if (animationStartStagerContainers.length) {
   animationStartStagerContainers.forEach((container) => {

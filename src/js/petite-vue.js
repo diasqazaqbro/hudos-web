@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { gsap } from 'gsap'
 import { createApp, reactive } from 'https://unpkg.com/petite-vue?module'
 
 // Store
@@ -193,13 +194,15 @@ const store = reactive({
     })
 
     axios.get('https://hudos-admin.vercel.app/api/objects').then((resp) => {
-      const objects = store.fetchResult.objects;
-      const responseData = resp.data[0];
-      objects.mainNumber = parseInt(responseData.mainNumber, 10);
-      objects.numberOne = parseInt(responseData.numberOne, 10);
-      objects.numberTwo = parseInt(responseData.numberTwo, 10);
-      objects.numberThree = parseInt(responseData.numberThree, 10);
-    });
+      const objects = store.fetchResult.objects
+      const responseData = resp.data[0]
+      objects.mainNumber = parseInt(responseData.mainNumber, 10)
+      objects.numberOne = parseInt(responseData.numberOne, 10)
+      objects.numberTwo = parseInt(responseData.numberTwo, 10)
+      objects.numberThree = parseInt(responseData.numberThree, 10)
+
+      this.doNumberAnimations()
+    })
     axios.get('https://hudos-admin.vercel.app/api/services').then((resp) => {
       const services = store.fetchResult.services
       services.oneTitle = resp.data[0].oneTitle
@@ -416,6 +419,37 @@ const store = reactive({
         const path = resp.data.results.path
         images.i19 = path
       })
+  },
+  doNumberAnimations() {
+    const projects = document.querySelector('#projects')
+
+    const projectsObserver = new IntersectionObserver(
+      (entries, observe) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            store.animateCounter()
+            observe.unobserve(projects)
+          }
+        })
+      },
+      { threshold: 0.5 }
+    )
+
+    if (projects) {
+      projectsObserver.observe(projects)
+    }
+  },
+  animateCounter() {
+    const counters = document.querySelectorAll('[data-number]')
+
+    if (counters.length) {
+      gsap.to(counters, {
+        textContent: (_, el) => el.dataset.counter,
+        duration: 2,
+        ease: 'expo.out',
+        snap: { textContent: 1 },
+      })
+    }
   },
   checkErrors(step) {
     this.clearError()

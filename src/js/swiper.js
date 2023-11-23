@@ -28,7 +28,7 @@ document.querySelectorAll('[name=slider-radio]').forEach((el) => {
 const optionsSwiper = {
   modules: [Pagination, Autoplay, EffectFade],
   enabled: false,
-  direction: 'vertical',
+  direction: 'horizontal',
   effect: 'fade',
   autoplay: {
     delay: 3000,
