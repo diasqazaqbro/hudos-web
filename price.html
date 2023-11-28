@@ -154,8 +154,8 @@
                 </div>
                 <div>
                   <h4 class="text-xl">{{store.fetchResult.price.oneTitle}}</h4>
-                  <p class="text-xl font-light text-gray">
-                    {{store.fetchResult.price.oneSupTitle}}
+                  <p v-for="(part, index) in separatedParts" :key="index" class="text-xl font-light text-gray">
+                    {{ part }}
                   </p>
                   <ul
                     class="mt-5 flex list-inside list-disc flex-col space-y-2 text-xl font-light text-gray"
@@ -867,5 +867,26 @@
     </template>
     <!-- End Btn component -->
     <script type="module" defer src="./main.js"></script>
+    <script>
+      export default {
+        data() {
+          return {
+            store: {
+              fetchResult: {
+                price: {
+                  oneSupTitle: "Your.Text.To.Split"
+                }
+              }
+            }
+          };
+        },
+        computed: {
+          separatedParts() {
+            // Split the string by '.'
+            return this.store.fetchResult.price.oneSupTitle.split('.');
+          }
+        }
+      };
+    </script>
   </body>
 </html>
