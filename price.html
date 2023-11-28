@@ -154,13 +154,16 @@
                 </div>
                 <div>
                   <h4 class="text-xl">{{store.fetchResult.price.oneTitle}}</h4>
-                  <p v-for="(part, index) in separatedParts" :key="index" class="text-xl font-light text-gray">
-                    {{ part }}
+                  <p class="text-xl font-light text-gray">
+                      {{ store.fetchResult.price.oneSupTitle }}
                   </p>
                   <ul
+                    v-for="(part, index) in store.fetchResult.price.oneDesc.split(';')"
+                    :key="index"
                     class="mt-5 flex list-inside list-disc flex-col space-y-2 text-xl font-light text-gray"
                   >
-                  {{store.fetchResult.price.oneDesc}}
+                      {{ part }}
+                      <br>
                   </ul>
                 </div>
               </div>
@@ -217,11 +220,14 @@
                   <p class="text-xl font-light text-gray">
                     {{store.fetchResult.price.twoSupTitle}}
                   </p>
-                  <ul
-                    class="mt-5 flex list-inside list-disc flex-col space-y-2 text-xl font-light text-gray"
-                  >
-                  {{store.fetchResult.price.twoDesc}}
-                  </ul>
+                    <ul
+                            v-for="(part, index) in store.fetchResult.price.twoDesc.split(';')"
+                            :key="index"
+                            class="mt-5 flex list-inside list-disc flex-col space-y-2 text-xl font-light text-gray"
+                    >
+                        {{ part }}
+                        <br>
+                    </ul>
                 </div>
               </div>
             </div>
@@ -264,11 +270,14 @@
                   <p class="text-xl font-light text-gray">
                     {{store.fetchResult.price.threeSupTitle}}
                   </p>
-                  <ul
-                    class="mt-5 flex list-inside list-disc flex-col space-y-2 text-xl font-light text-gray"
-                  >
-                  {{store.fetchResult.price.threeDesc}}
-                  </ul>
+                    <ul
+                            v-for="(part, index) in store.fetchResult.price.threeDesc.split(';')"
+                            :key="index"
+                            class="mt-5 flex list-inside list-disc flex-col space-y-2 text-xl font-light text-gray"
+                    >
+                        {{ part }}
+                        <br>
+                    </ul>
                 </div>
               </div>
               <div data-anim class="flex space-x-5">
@@ -299,11 +308,14 @@
                   <p class="text-xl font-light text-gray">
                     {{store.fetchResult.price.fourSupTitle}}
                   </p>
-                  <ul
-                    class="mt-5 flex list-inside list-disc flex-col space-y-2 text-xl font-light text-gray"
-                  >
-                  {{store.fetchResult.price.fourDesc}}
-                  </ul>
+                    <ul
+                            v-for="(part, index) in store.fetchResult.price.fourDesc.split(';')"
+                            :key="index"
+                            class="mt-5 flex list-inside list-disc flex-col space-y-2 text-xl font-light text-gray"
+                    >
+                        {{ part }}
+                        <br>
+                    </ul>
                   <button
                     @click="store.showModal(false)"
                     class="mt-[60px] h-[52px] w-[250px] bg-accent transition-colors hover:bg-accent-light active:bg-accent-darken"
@@ -865,25 +877,14 @@
         <template v-else>{{value}}</template>
       </button>
     </template>
+
     <!-- End Btn component -->
     <script type="module" defer src="./main.js"></script>
     <script>
       export default {
-        data() {
-          return {
-            store: {
-              fetchResult: {
-                price: {
-                  oneSupTitle: "Your.Text.To.Split"
-                }
-              }
-            }
-          };
-        },
         computed: {
           separatedParts() {
-            // Split the string by '.'
-            return this.store.fetchResult.price.oneSupTitle.split('.');
+            return store.fetchResult.price.oneSupTitle.split('.');
           }
         }
       };
