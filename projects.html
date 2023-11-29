@@ -13,7 +13,7 @@
     />
   </head>
   <body
-  @vue:mounted="store.fetchData"
+    @vue:mounted="store.fetchData"
     v-scope
     :class="['relative bg-bgc text-main selection:bg-accent selection:text-white', store.isModalOpen ? 'overflow-hidden' : '']"
   >
@@ -111,222 +111,63 @@
         class="pb-[100px] pt-[120px] md:pb-[140px] md:pt-[220px]"
       >
         <div class="container">
-          <h2 data-anim class="mb-[60px] font-bold">Наши Цены</h2>
-          <div class="relative grid grid-cols-1 lg:grid-cols-2 lg:gap-[100px]">
+          <h2 data-anim class="mb-[60px] text-center font-bold">Наши проекты</h2>
+          <div class="relative grid grid-cols-1 lg:grid-cols-4 lg:gap-[100px]">
             <span
               data-anim
               class="lg:absolute lg:left-1/2 lg:h-full lg:w-px lg:-translate-x-1/2 lg:bg-gray-light"
             ></span>
             <div
-              class="grid grid-cols-1 gap-[60px] lg-m:mb-[60px] lg:w-[calc(100%-50px)]"
+              class="grid grid-cols-2 gap-[60px] "
             >
-              <div data-anim class="flex space-x-5">
-                <div class="shrink-0">
-                  <svg
-                    class="h-7 w-7"
-                    viewBox="0 0 28 28"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect
-                      x="2.33594"
-                      y="2.33301"
-                      width="11.6667"
-                      height="23.3333"
-                      rx="3.5"
-                      stroke="#2A2A2A"
-                      stroke-width="1.75"
-                    />
-                    <path
-                      d="M14.168 5.83301L15.1931 4.80788C16.5599 3.44105 18.776 3.44105 20.1428 4.80788L23.4427 8.10771C24.8095 9.47455 24.8095 11.6906 23.4427 13.0575L14.168 22.3322"
-                      stroke="#2A2A2A"
-                      stroke-width="1.75"
-                    />
-                    <path
-                      d="M22.168 13.9995V13.9995C24.101 13.9995 25.668 15.5665 25.668 17.4995L25.668 22.1662C25.668 24.0992 24.101 25.6662 22.168 25.6662L8.16797 25.6662"
-                      stroke="#2A2A2A"
-                      stroke-width="1.75"
-                    />
-                    <circle
-                      cx="8.17057"
-                      cy="20.9997"
-                      r="1.16667"
-                      fill="#2A2A2A"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <h4 class="text-xl">{{store.fetchResult.price.oneTitle}}</h4>
-                  <p class="text-xl font-light text-gray">
-                      {{ store.fetchResult.price.oneSupTitle }}
-                  </p>
-                  <ul
-                    v-for="(part, index) in store.fetchResult.price.oneDesc.split(';')"
-                    :key="index"
-                    class="mt-5 flex list-inside list-disc flex-col space-y-2 text-xl font-light text-gray"
-                  >
-                      {{ part }}
-                      <br>
-                  </ul>
-                </div>
-              </div>
-              <div data-anim class="flex space-x-5">
-                <div class="shrink-0">
-                  <svg
-                    class="h-7 w-7"
-                    viewBox="0 0 26 26"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect
-                      x="1.33594"
-                      y="1.33301"
-                      width="23.3333"
-                      height="23.3333"
-                      rx="5.83333"
-                      stroke="#2A2A2A"
-                      stroke-width="1.75"
-                    />
-                    <path
-                      d="M19.4206 13.583L11.2539 13.583"
-                      stroke="#2A2A2A"
-                      stroke-width="1.75"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M19.4219 11.2497L19.4219 13.583"
-                      stroke="#2A2A2A"
-                      stroke-width="1.75"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M16.5039 11.2497L16.5039 13.583"
-                      stroke="#2A2A2A"
-                      stroke-width="1.75"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <circle
-                      cx="2.33333"
-                      cy="2.33333"
-                      r="2.33333"
-                      transform="matrix(-1 0 0 1 11.2539 11.2495)"
-                      stroke="#2A2A2A"
-                      stroke-width="1.75"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <h4 class="text-xl">{{store.fetchResult.price.twoTitle}}</h4>
-                  <p class="text-xl font-light text-gray">
-                    {{store.fetchResult.price.twoSupTitle}}
-                  </p>
-                    <ul
-                            v-for="(part, index) in store.fetchResult.price.twoDesc.split(';')"
-                            :key="index"
-                            class="mt-5 flex list-inside list-disc flex-col space-y-2 text-xl font-light text-gray"
-                    >
-                        {{ part }}
-                        <br>
-                    </ul>
-                </div>
-              </div>
-            </div>
-            <div class="grid grid-cols-1 gap-[60px] lg:w-[calc(100%-50px)]">
-              <div data-anim class="flex space-x-5">
-                <div class="shrink-0">
-                  <svg
-                    class="h-7 w-7"
-                    viewBox="0 0 26 26"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect
-                      x="1.33594"
-                      y="1.33301"
-                      width="23.3333"
-                      height="23.3333"
-                      rx="5.83333"
-                      stroke="#2A2A2A"
-                      stroke-width="1.75"
-                    />
-                    <path
-                      d="M15.3359 1.33317L15.3359 24.6665"
-                      stroke="#2A2A2A"
-                      stroke-width="1.75"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M15.3346 15.333L24.668 15.333"
-                      stroke="#2A2A2A"
-                      stroke-width="1.75"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <h4 class="text-xl">{{store.fetchResult.price.threeTitle}}</h4>
-                  <p class="text-xl font-light text-gray">
-                    {{store.fetchResult.price.threeSupTitle}}
-                  </p>
-                    <ul
-                            v-for="(part, index) in store.fetchResult.price.threeDesc.split(';')"
-                            :key="index"
-                            class="mt-5 flex list-inside list-disc flex-col space-y-2 text-xl font-light text-gray"
-                    >
-                        {{ part }}
-                        <br>
-                    </ul>
-                </div>
-              </div>
-              <div data-anim class="flex space-x-5">
-                <div class="shrink-0">
-                  <svg
-                    class="h-6 w-6"
-                    viewBox="0 0 20 23"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <circle
-                      cx="4.66667"
-                      cy="4.66667"
-                      r="4.66667"
-                      transform="matrix(-1 0 0 1 14.668 1.5)"
-                      stroke="#2A2A2A"
-                      stroke-width="1.75"
-                    />
-                    <path
-                      d="M1.83594 17.757C1.83594 16.7532 2.46693 15.8578 3.41221 15.5202V15.5202C7.67399 13.9982 12.3312 13.9982 16.593 15.5202V15.5202C17.5383 15.8578 18.1693 16.7532 18.1693 17.757V19.2917C18.1693 20.6771 16.9423 21.7412 15.5709 21.5453L14.4574 21.3862C11.5025 20.9641 8.50268 20.9641 5.54783 21.3862L4.43435 21.5453C3.06293 21.7412 1.83594 20.6771 1.83594 19.2917V17.757Z"
-                      stroke="#2A2A2A"
-                      stroke-width="1.75"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <h4 class="text-xl">{{store.fetchResult.price.fourTitle}}</h4>
-                  <p class="text-xl font-light text-gray">
-                    {{store.fetchResult.price.fourSupTitle}}
-                  </p>
-                    <ul
-                            v-for="(part, index) in store.fetchResult.price.fourDesc.split(';')"
-                            :key="index"
-                            class="mt-5 flex list-inside list-disc flex-col space-y-2 text-xl font-light text-gray"
-                    >
-                        {{ part }}
-                        <br>
-                    </ul>
-                  <button
-                    @click="store.showModal(false)"
-                    class="mt-[60px] h-[52px] w-[250px] bg-accent transition-colors hover:bg-accent-light active:bg-accent-darken"
-                  >
-                    Выбрать
-                  </button>
-                </div>
-              </div>
+              <img
+                data-anim
+                class="w-full h-full"
+                :src="store.fetchResult.images.i1"
+                alt="benefits"
+              />
+              <img
+                data-anim
+                class="w-full h-full"
+                :src="store.fetchResult.images.i2"
+                alt="benefits"
+              />
+              <img
+                data-anim
+                class="w-full h-full"
+                :src="store.fetchResult.images.i2"
+                alt="benefits"
+              />
+              <img
+                data-anim
+                class="w-full h-full"
+                :src="store.fetchResult.images.i2"
+                alt="benefits"
+              />
+              <img
+                data-anim
+                class="w-full h-full"
+                :src="store.fetchResult.images.i2"
+                alt="benefits"
+              />
+              <img
+                data-anim
+                class="w-full h-full"
+                :src="store.fetchResult.images.i2"
+                alt="benefits"
+              />
+              <img
+                data-anim
+                class="w-full h-full"
+                :src="store.fetchResult.images.i2"
+                alt="benefits"
+              />
+              <img
+                data-anim
+                class="w-full h-full"
+                :src="store.fetchResult.images.i2"
+                alt="benefits"
+              />
             </div>
           </div>
         </div>
@@ -451,9 +292,7 @@
                     />
                   </div>
                   <div>
-                    <div>
-                      {{store.fetchResult.footer.address}}
-                    </div>
+                    <div>{{store.fetchResult.footer.address}}</div>
                     <p class="mt-2 text-gray">
                       Время работы: {{store.fetchResult.footer.workTime}}<br />
                       Выходные: {{store.fetchResult.footer.holiday}}
@@ -887,10 +726,10 @@
       export default {
         computed: {
           separatedParts() {
-            return store.fetchResult.price.oneSupTitle.split('.');
-          }
-        }
-      };
+            return store.fetchResult.price.oneSupTitle.split('.')
+          },
+        },
+      }
     </script>
   </body>
 </html>

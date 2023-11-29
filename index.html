@@ -81,9 +81,15 @@
           ><span
             class="absolute left-1/2 top-1/2 h-px w-6 -translate-x-1/2 -translate-y-1/2 -rotate-45 bg-main"
           ></span>
+          ><span
+            class="absolute left-1/2 top-1/2 h-px w-6 -translate-x-1/2 -translate-y-1/2 -rotate-45 bg-main"
+          ></span>
         </a>
         <a href="price.html" class="transition-colors hover:text-accent">
           Цены
+        </a>
+        <a href="projects.html" class="transition-colors hover:text-accent">
+          Портфолио
         </a>
         <a
           href="tel:{{store.fetchResult.settings.number}}"
@@ -156,8 +162,10 @@
           <div class="lg-m:mb-5 lg:w-[386px]">
             <h2 class="md:text-4xl md:leading-snug">
               <span class="font-bold">Успешно</span> <br />
-              <span>Реализованных <br />
-                  объектов</span>
+              <span
+                >Реализованных <br />
+                объектов</span
+              >
             </h2>
             <div
               data-number
@@ -209,9 +217,7 @@
                 </div>
               </li>
               <li class="md-m:order-1">
-                <div class="text-xl font-light md:mb-5">
-                    Лет на рынке
-                </div>
+                <div class="text-xl font-light md:mb-5">Лет на рынке</div>
                 <div
                   data-number
                   :data-counter="Number(store.fetchResult.objects.numberTwo)"
@@ -802,7 +808,7 @@
           </div>
           <div
             data-dots
-            class="absolute !bottom-auto !left-auto !right-4 !top-4 z-10 flex !w-auto !transform-none flex-col space-y-[6px] md:!right-7 md:!top-7"
+            class="absolute !bottom-auto !left-auto !right-4 !top-5 z-10 flex !w-auto !transform-none flex-col space-y-[6px] md:!right-7 md:!top-7"
           ></div>
           <!-- Slider main container -->
           <div data-swiper class="h-full w-full">
@@ -987,14 +993,15 @@
         <div
           class="container border-b border-gray-light border-opacity-30 pb-[50px] md:pb-[130px]"
         >
-          <h2 style="width: 30%;"  class="mb-2 md:mb-7" data-anim>
-            <span class="font-bold">{{store.fetchResult.partners.accent}}</span>{{store.fetchResult.partners.title}}
+          <h2 style="width: 30%" class="mb-2 md:mb-7" data-anim>
+            <span class="font-bold">{{store.fetchResult.partners.accent}}</span
+            >{{store.fetchResult.partners.title}}
           </h2>
-          <p style="width: 30%;" data-anim class="mb-5 text-xl md:mb-7">
+          <p style="width: 30%" data-anim class="mb-5 text-xl md:mb-7">
             {{store.fetchResult.partners.desc}}
           </p>
           <div
-            class="flex items-center sm-m:-mr-4 sm-m:overflow-auto sm:grid sm:grid-cols-7 sm:gap-5 lg:gap-15"
+            class="lg:gap-15 flex items-center sm-m:-mr-4 sm-m:overflow-auto sm:grid sm:grid-cols-7 sm:gap-5"
           >
             <img
               data-anim
