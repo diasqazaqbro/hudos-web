@@ -1374,8 +1374,9 @@
           <div
             class="relative w-full text-[40px] font-bold uppercase leading-tight text-white"
           >
-            Вы это <br />
-            сделали
+              Три<br />
+            простых <br />
+              шага
           </div>
         </div>
         <!-- Petite Vue  https://github.com/vuejs/petite-vue-->
@@ -1567,7 +1568,8 @@
                   <input
                     class="w-full border border-gray-light bg-bgc px-5 py-4 outline-none [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none"
                     v-model="store.form.phone"
-                    type="number"
+                    pattern="[0-9]*"
+                    type="text"
                     placeholder="Номер телефона"
                     @input="store.clearError"
                   />
