@@ -522,11 +522,11 @@
           </div>
           <div
             data-dots
-            class="absolute !bottom-auto !left-auto !right-4 !top-4 z-10 flex !w-auto !transform-none flex-col space-y-[6px] md:!bottom-7 md:!right-7 md:!top-auto"
+            class="absolute !bottom-auto !left-auto !right-4 !top-4 z-10 flex !w-auto !transform-none flex-row space-y-[6px] md:!bottom-7 md:!right-7 md:!top-auto"
           ></div>
           <div
             data-dots
-            class="absolute !bottom-auto !left-auto !right-4 !top-4 z-10 flex !w-auto !transform-none flex-col space-y-[6px] md:!bottom-7 md:!right-7 md:!top-auto"
+            class="absolute !bottom-auto !left-auto !right-4 !top-4 z-10 flex !w-auto !transform-none flex-row space-y-[6px] md:!bottom-7 md:!right-7 md:!top-auto"
           ></div>
           <!-- Slider main container -->
           <div data-swiper class="h-full w-full">
@@ -808,7 +808,7 @@
           </div>
           <div
             data-dots
-            class="absolute !bottom-auto !left-auto !right-4 !top-5 z-10 flex !w-auto !transform-none flex-col space-y-[6px] md:!right-7 md:!top-7"
+            class="absolute !bottom-auto !left-auto !right-4 !top-5 z-10 flex !w-auto !transform-none flex-row space-y-[6px] md:!right-7 md:!top-7"
           ></div>
           <!-- Slider main container -->
           <div data-swiper class="h-full w-full">
@@ -1075,7 +1075,7 @@
               </h4>
             </div>
             <div class="max-h-0 overflow-hidden transition-all">
-              <p class="text-xl">{{store.fetchResult.faq.oneSupTitle}}</p>
+              <p class="mb-5 text-xl">{{store.fetchResult.faq.oneSupTitle}}</p>
             </div>
             <div
               data-trigger="questions"
@@ -1090,7 +1090,7 @@
               </h4>
             </div>
             <div class="max-h-0 overflow-hidden transition-all">
-              <p class="text-xl">{{store.fetchResult.faq.twoSupTitle}}</p>
+              <p class="mb-5 text-xl">{{store.fetchResult.faq.twoSupTitle}}</p>
             </div>
             <div
               data-trigger="questions"
@@ -1105,7 +1105,9 @@
               </h4>
             </div>
             <div class="max-h-0 overflow-hidden transition-all">
-              <p class="text-xl">{{store.fetchResult.faq.threeSupTitle}}</p>
+              <p class="mb-5 text-xl">
+                {{store.fetchResult.faq.threeSupTitle}}
+              </p>
             </div>
           </div>
         </div>
@@ -1381,8 +1383,9 @@
           <div
             class="relative w-full text-[40px] font-bold uppercase leading-tight text-white"
           >
-            Вы это <br />
-            сделали
+            Три<br />
+            простых <br />
+            шага
           </div>
         </div>
         <!-- Petite Vue  https://github.com/vuejs/petite-vue-->
@@ -1561,6 +1564,7 @@
             <!-- Step-3 -->
             <div v-if="store.currentStep === store.getStep(3).value">
               <div class="mb-6">
+                <h4 class="mb-7 text-2xl font-bold uppercase">Последний шаг</h4>
                 <div class="mb-4">
                   <input
                     class="w-full border border-gray-light bg-bgc px-5 py-4 outline-none"
@@ -1574,7 +1578,8 @@
                   <input
                     class="w-full border border-gray-light bg-bgc px-5 py-4 outline-none [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none"
                     v-model="store.form.phone"
-                    type="number"
+                    pattern="[0-9]*"
+                    type="text"
                     placeholder="Номер телефона"
                     @input="store.clearError"
                   />
