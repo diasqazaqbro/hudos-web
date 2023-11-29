@@ -88,6 +88,10 @@
   top: 56px;
   left: 12px;
 }
+
+.space-y-\[6px\] > :not([hidden]) ~ :not([hidden]) {
+  margin: 0;
+}
 @keyframes lds-roller {
   0% {
     transform: rotate(0deg);
