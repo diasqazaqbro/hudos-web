@@ -78,6 +78,24 @@ const store = reactive({
       eightTitle: 'loading...',
       eightDesc: 'loading...',
     },
+    portfolio: {
+      oneTitle: 'loading...',
+      oneDesc: 'loading...',
+      twoTitle: 'loading...',
+      twoDesc: 'loading...',
+      threeTitle: 'loading...',
+      threeDesc: 'loading...',
+      fourTitle: 'loading...',
+      fourDesc: 'loading...',
+      fiveTitle: 'loading...',
+      fiveDesc: 'loading...',
+      sixTitle: 'loading...',
+      sixDesc: 'loading...',
+      sevenTitle: 'loading...',
+      sevenDesc: 'loading...',
+      eightTitle: 'loading...',
+      eightDesc: 'loading...',
+    },
     footer: {
       address: 'loading...',
       workTime: 'loading...',
@@ -119,6 +137,11 @@ const store = reactive({
       i24: '',
       i25: '',
       i26: '',
+      i27: '',
+      i28: '',
+      i29: '',
+      i30: '',
+      i31: '',
     },
     projects: {
       designTitleOne: 'loading...',
@@ -269,6 +292,25 @@ const store = reactive({
       stages.sevenDesc = resp.data[0].sevenDesc
       stages.eightTitle = resp.data[0].eightTitle
       stages.eightDesc = resp.data[0].eightDesc
+    })
+    axios.get('https://hudos-admin.vercel.app/api/portfolio').then((resp) => {
+      const portfolio = store.fetchResult.portfolio
+      portfolio.oneTitle = resp.data[0].oneTitle
+      portfolio.oneDesc = resp.data[0].oneDesc
+      portfolio.twoTitle = resp.data[0].twoTitle
+      portfolio.twoDesc = resp.data[0].twoDesc
+      portfolio.threeTitle = resp.data[0].threeTitle
+      portfolio.threeDesc = resp.data[0].threeDesc
+      portfolio.fourTitle = resp.data[0].fourTitle
+      portfolio.fourDesc = resp.data[0].fourDesc
+      portfolio.fiveTitle = resp.data[0].fiveTitle
+      portfolio.fiveDesc = resp.data[0].fiveDesc
+      portfolio.sixTitle = resp.data[0].sixTitle
+      portfolio.sixDesc = resp.data[0].sixDesc
+      portfolio.sevenTitle = resp.data[0].sevenTitle
+      portfolio.sevenDesc = resp.data[0].sevenDesc
+      portfolio.eightTitle = resp.data[0].eightTitle
+      portfolio.eightDesc = resp.data[0].eightDesc
     })
     axios.get('https://hudos-admin.vercel.app/api/projects').then((resp) => {
       const projects = store.fetchResult.projects
@@ -485,6 +527,34 @@ const store = reactive({
         const images = store.fetchResult.images
         const path = resp.data.results.path
         images.i26 = path
+      })
+    axios
+      .get('https://timkaqwerty.pythonanywhere.com/hds/img/?id=27')
+      .then((resp) => {
+        const images = store.fetchResult.images
+        const path = resp.data.results.path
+        images.i27 = path
+      })
+    axios
+      .get('https://timkaqwerty.pythonanywhere.com/hds/img/?id=28')
+      .then((resp) => {
+        const images = store.fetchResult.images
+        const path = resp.data.results.path
+        images.i28 = path
+      })
+    axios
+      .get('https://timkaqwerty.pythonanywhere.com/hds/img/?id=29')
+      .then((resp) => {
+        const images = store.fetchResult.images
+        const path = resp.data.results.path
+        images.i29 = path
+      })
+    axios
+      .get('https://timkaqwerty.pythonanywhere.com/hds/img/?id=30')
+      .then((resp) => {
+        const images = store.fetchResult.images
+        const path = resp.data.results.path
+        images.i30 = path
       })
   },
   doNumberAnimations() {

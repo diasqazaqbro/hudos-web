@@ -92,6 +92,42 @@
 .space-y-\[6px\] > :not([hidden]) ~ :not([hidden]) {
   margin: 0;
 }
+
+.projects {
+  position: relative;
+  overflow: hidden;
+  
+}
+
+.p__img {
+  border-radius: 15px;
+}
+
+.p__text {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  transition: top 0.3s ease-out;
+}
+
+.projects:hover .p__text {
+  top: 65%;
+}
+
+.p__title {
+  font-size: clamp(12px, 1.24992vw, 48px);
+  color: white;
+  margin-bottom: 5px;
+}
+
+.p__suptitle {
+  font-size: clamp(8px,0.83328vw,32px);
+  color: white;
+}
+
+
 @keyframes lds-roller {
   0% {
     transform: rotate(0deg);

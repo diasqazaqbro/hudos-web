@@ -111,63 +111,59 @@
         class="pb-[100px] pt-[120px] md:pb-[140px] md:pt-[220px]"
       >
         <div class="container">
-          <h2 data-anim class="mb-[60px] text-center font-bold">Наши проекты</h2>
+          <h2 data-anim class="mb-[60px] text-center font-bold">
+            Наши проекты
+          </h2>
           <div class="relative grid grid-cols-1 lg:grid-cols-4 lg:gap-[100px]">
-            <span
-              data-anim
-              class="lg:absolute lg:left-1/2 lg:h-full lg:w-px lg:-translate-x-1/2 lg:bg-gray-light"
-            ></span>
-            <div
-              class="grid grid-cols-2 gap-[60px] "
-            >
-              <img
-                data-anim
-                class="w-full h-full"
-                :src="store.fetchResult.images.i1"
-                alt="benefits"
-              />
-              <img
-                data-anim
-                class="w-full h-full"
-                :src="store.fetchResult.images.i2"
-                alt="benefits"
-              />
-              <img
-                data-anim
-                class="w-full h-full"
-                :src="store.fetchResult.images.i2"
-                alt="benefits"
-              />
-              <img
-                data-anim
-                class="w-full h-full"
-                :src="store.fetchResult.images.i2"
-                alt="benefits"
-              />
-              <img
-                data-anim
-                class="w-full h-full"
-                :src="store.fetchResult.images.i2"
-                alt="benefits"
-              />
-              <img
-                data-anim
-                class="w-full h-full"
-                :src="store.fetchResult.images.i2"
-                alt="benefits"
-              />
-              <img
-                data-anim
-                class="w-full h-full"
-                :src="store.fetchResult.images.i2"
-                alt="benefits"
-              />
-              <img
-                data-anim
-                class="w-full h-full"
-                :src="store.fetchResult.images.i2"
-                alt="benefits"
-              />
+            <div class="grid grid-cols-2 gap-[60px]">
+              <div class="projects">
+                <img
+                  data-anim
+                  class="p__img h-full w-full"
+                  :src="store.fetchResult.images.i27"
+                  alt="benefits"
+                />
+                <div class="p__text">
+                  <h3 class="p__title">{{store.fetchResult.portfolio.oneTitle}}</h3>
+                  <h5 class="p__suptitle">{{store.fetchResult.portfolio.oneDesc}}</h5>
+                </div>
+              </div>
+              <div class="projects">
+                <img
+                  data-anim
+                  class="p__img h-full w-full"
+                  :src="store.fetchResult.images.i28"
+                  alt="benefits"
+                />
+                <div class="p__text">
+                  <h3 class="p__title">{{store.fetchResult.portfolio.twoTitle}}</h3>
+                  <h5 class="p__suptitle">{{store.fetchResult.portfolio.twoDesc}}</h5>
+                </div>
+              </div>
+              <div class="projects">
+                <img
+                  data-anim
+                  class="p__img h-full w-full"
+                  :src="store.fetchResult.images.i29"
+                  alt="benefits"
+                />
+                <div class="p__text">
+                  <h3 class="p__title">{{store.fetchResult.portfolio.threeTitle}}</h3>
+                  <h5 class="p__suptitle">{{store.fetchResult.portfolio.threeDesc}}</h5>
+                </div>
+              </div>
+              <div class="projects">
+                <img
+                  data-anim
+                  class="p__img h-full w-full"
+                  :src="store.fetchResult.images.i30"
+                  alt="benefits"
+                />
+                <div class="p__text">
+                  <h3 class="p__title">{{store.fetchResult.portfolio.fourTitle}}</h3>
+                  <h5 class="p__suptitle">{{store.fetchResult.portfolio.fourDesc}}</h5>
+                </div>
+              </div>
             </div>
           </div>
         </div>
