@@ -26,6 +26,11 @@ const store = reactive({
       numberTwo: 0,
       numberThree: 0,
     },
+    partners: {
+      accent: 0,
+      title: 0,
+      desc: 0,
+    },
     services: {
       oneTitle: 'loading...',
       oneSupTitle: 'loading...',
@@ -107,6 +112,13 @@ const store = reactive({
       i17: '',
       i18: '',
       i19: '',
+      i20: '',
+      i21: '',
+      i22: '',
+      i23: '',
+      i24: '',
+      i25: '',
+      i26: '',
     },
     projects: {
       designTitleOne: 'loading...',
@@ -286,6 +298,12 @@ const store = reactive({
       welcome.welcomeSupTitle = resp.data[0].welcomeSupTitle
       welcome.welcomeDesc = resp.data[0].welcomeDesc
     })
+    axios.get('https://hudos-admin.vercel.app/api/partners').then((resp) => {
+      const partners = store.fetchResult.partners
+      partners.accent = resp.data[0].accent
+      partners.title = resp.data[0].title
+      partners.desc = resp.data[0].desc
+    })
     axios
       .get('https://timkaqwerty.pythonanywhere.com/hds/img/?id=1')
       .then((resp) => {
@@ -418,6 +436,55 @@ const store = reactive({
         const images = store.fetchResult.images
         const path = resp.data.results.path
         images.i19 = path
+      })
+    axios
+      .get('https://timkaqwerty.pythonanywhere.com/hds/img/?id=20')
+      .then((resp) => {
+        const images = store.fetchResult.images
+        const path = resp.data.results.path
+        images.i20 = path
+      })
+    axios
+      .get('https://timkaqwerty.pythonanywhere.com/hds/img/?id=21')
+      .then((resp) => {
+        const images = store.fetchResult.images
+        const path = resp.data.results.path
+        images.i21 = path
+      })
+    axios
+      .get('https://timkaqwerty.pythonanywhere.com/hds/img/?id=22')
+      .then((resp) => {
+        const images = store.fetchResult.images
+        const path = resp.data.results.path
+        images.i22 = path
+      })
+    axios
+      .get('https://timkaqwerty.pythonanywhere.com/hds/img/?id=23')
+      .then((resp) => {
+        const images = store.fetchResult.images
+        const path = resp.data.results.path
+        images.i23 = path
+      })
+    axios
+      .get('https://timkaqwerty.pythonanywhere.com/hds/img/?id=24')
+      .then((resp) => {
+        const images = store.fetchResult.images
+        const path = resp.data.results.path
+        images.i24 = path
+      })
+    axios
+      .get('https://timkaqwerty.pythonanywhere.com/hds/img/?id=25')
+      .then((resp) => {
+        const images = store.fetchResult.images
+        const path = resp.data.results.path
+        images.i25 = path
+      })
+    axios
+      .get('https://timkaqwerty.pythonanywhere.com/hds/img/?id=26')
+      .then((resp) => {
+        const images = store.fetchResult.images
+        const path = resp.data.results.path
+        images.i26 = path
       })
   },
   doNumberAnimations() {

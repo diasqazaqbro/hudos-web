@@ -987,39 +987,55 @@
         <div
           class="container border-b border-gray-light border-opacity-30 pb-[50px] md:pb-[130px]"
         >
-          <h2 class="mb-2 md:mb-7" data-anim>
-            <span class="font-bold">Бонусы</span> от <br />
-            партнеров
+          <h2 style="width: 30%;"  class="mb-2 md:mb-7" data-anim>
+            <span class="font-bold">{{store.fetchResult.partners.accent}}</span>{{store.fetchResult.partners.title}}
           </h2>
-          <p data-anim class="mb-5 text-xl md:mb-7">
-            Работая с нами, вы получаете <br />
-            товары по оптовым ценам
+          <p style="width: 30%;" data-anim class="mb-5 text-xl md:mb-7">
+            {{store.fetchResult.partners.desc}}
           </p>
           <div
-            class="flex items-center sm-m:-mr-4 sm-m:overflow-auto sm:grid sm:grid-cols-4 sm:gap-10 lg:gap-32"
+            class="flex items-center sm-m:-mr-4 sm-m:overflow-auto sm:grid sm:grid-cols-7 sm:gap-5 lg:gap-15"
           >
             <img
               data-anim
-              class="mr-10 sm-m:w-36"
-              src="./image/benefits-1.png"
+              class="sm-m:w-14"
+              :src="store.fetchResult.images.i20"
               alt="benefits"
             />
             <img
               data-anim
-              class="mr-10 sm-m:w-36"
-              src="./image/benefits-2.png"
+              class="sm-m:w-14"
+              :src="store.fetchResult.images.i21"
               alt="benefits"
             />
             <img
               data-anim
-              class="mr-10 sm-m:w-36"
-              src="./image/benefits-3.png"
+              class="sm-m:w-14"
+              :src="store.fetchResult.images.i22"
               alt="benefits"
             />
             <img
               data-anim
-              class="sm-m:w-36"
-              src="./image/benefits-4.png"
+              class="sm-m:w-14"
+              :src="store.fetchResult.images.i23"
+              alt="benefits"
+            />
+            <img
+              data-anim
+              class="sm-m:w-14"
+              :src="store.fetchResult.images.i24"
+              alt="benefits"
+            />
+            <img
+              data-anim
+              class="sm-m:w-14"
+              :src="store.fetchResult.images.i25"
+              alt="benefits"
+            />
+            <img
+              data-anim
+              class="sm-m:w-14"
+              :src="store.fetchResult.images.i26"
               alt="benefits"
             />
           </div>
