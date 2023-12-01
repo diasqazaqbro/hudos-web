@@ -11,6 +11,15 @@ const store = reactive({
     name: '',
     phone: '',
   },
+  isVisible: false,
+  openModal(id, number) {
+    let obj = document.querySelectorAll(`#${id}`)[0]
+    obj.style.display = 'flex'
+  },
+  closeSecondModal(id) {
+    let obj = document.querySelectorAll(`#${id}`)[0]
+    obj.style.display = 'none'
+  },
   fetchResult: {
     faq: {
       oneTitle: 'loading...',
@@ -78,24 +87,13 @@ const store = reactive({
       eightTitle: 'loading...',
       eightDesc: 'loading...',
     },
-    portfolio: {
-      oneTitle: 'loading...',
-      oneDesc: 'loading...',
-      twoTitle: 'loading...',
-      twoDesc: 'loading...',
-      threeTitle: 'loading...',
-      threeDesc: 'loading...',
-      fourTitle: 'loading...',
-      fourDesc: 'loading...',
-      fiveTitle: 'loading...',
-      fiveDesc: 'loading...',
-      sixTitle: 'loading...',
-      sixDesc: 'loading...',
-      sevenTitle: 'loading...',
-      sevenDesc: 'loading...',
-      eightTitle: 'loading...',
-      eightDesc: 'loading...',
-    },
+    portfolio: [
+      {
+        title: 'loading...',
+        supTitle: 'loading...',
+      },
+    ],
+    portfolioAfter: [],
     footer: {
       address: 'loading...',
       workTime: 'loading...',
@@ -217,7 +215,69 @@ const store = reactive({
   getStep(step) {
     return this.steps.find((item) => item.value === step)
   },
+  // fetchImg(id, number) {
+  //   console.log(number)
+  //   axios
+  //     .get(`https://api.reddel.kz/api/get_portfolio_images/` + number)
+  //     .then((resp) => {
+  //       let result = 'https://api.reddel.kz' + resp.data.image
+  //       this.fetchedImg.push({
+  //         id: id,
+  //         number: number,
+  //         image: result,
+  //       })
+  //       console.log(this.fetchedImg[0].image)
+  //     })
+  //     .catch((error) => {
+  //       console.error('Ошибка при получении изображения:', error)
+  //     })
+  // },
+
+  fetchedImg: [],
   fetchData() {
+    async function imgFetch() {
+      const apiUrl = 'https://api.reddel.kz/api/get_portfolio_images'
+      const dataArray = store.fetchResult.portfolio
+      const url = 'https://api.reddel.kz'
+      const portfolioMap = {}
+
+      const requests = []
+
+      dataArray.forEach((item) => {
+        portfolioMap[item.imgId] = { ...item, images: [] }
+
+        for (let i = 1; i <= 8; i++) {
+          const nextImgId = item.imgId + i
+
+          requests.push(
+            axios.get(`${apiUrl}/${nextImgId}`).then((response) => {
+              const imagePath = response.data.image
+              console.log(`Image for imgId ${nextImgId}:  ${url}${imagePath}`)
+
+              portfolioMap[item.imgId].images.push(`${url}${imagePath}`)
+            })
+          )
+        }
+      })
+
+      await Promise.all(requests)
+
+      const portfolioArray = Object.values(portfolioMap)
+      setTimeout(() => {
+        store.fetchResult.portfolioAfter = portfolioArray;
+        console.log('32131infooooo', store.fetchResult.portfolioAfter);
+      }, 1000); 
+    }
+
+    setTimeout(() => {
+      imgFetch()
+    }, 1000)
+
+
+    axios.get('https://hudos-admin.vercel.app/api/portfolio').then((resp) => {
+      store.fetchResult.portfolio = resp.data
+      store.portfolio = resp.data
+    })
     axios.get('https://hudos-admin.vercel.app/api/faq').then((resp) => {
       const faq = store.fetchResult.faq
       faq.oneTitle = resp.data[0].oneTitle
@@ -227,7 +287,6 @@ const store = reactive({
       faq.threeTitle = resp.data[0].threeTitle
       faq.threeSupTitle = resp.data[0].threeSupTitle
     })
-
     axios.get('https://hudos-admin.vercel.app/api/objects').then((resp) => {
       const objects = store.fetchResult.objects
       const responseData = resp.data[0]
@@ -293,25 +352,7 @@ const store = reactive({
       stages.eightTitle = resp.data[0].eightTitle
       stages.eightDesc = resp.data[0].eightDesc
     })
-    axios.get('https://hudos-admin.vercel.app/api/portfolio').then((resp) => {
-      const portfolio = store.fetchResult.portfolio
-      portfolio.oneTitle = resp.data[0].oneTitle
-      portfolio.oneDesc = resp.data[0].oneDesc
-      portfolio.twoTitle = resp.data[0].twoTitle
-      portfolio.twoDesc = resp.data[0].twoDesc
-      portfolio.threeTitle = resp.data[0].threeTitle
-      portfolio.threeDesc = resp.data[0].threeDesc
-      portfolio.fourTitle = resp.data[0].fourTitle
-      portfolio.fourDesc = resp.data[0].fourDesc
-      portfolio.fiveTitle = resp.data[0].fiveTitle
-      portfolio.fiveDesc = resp.data[0].fiveDesc
-      portfolio.sixTitle = resp.data[0].sixTitle
-      portfolio.sixDesc = resp.data[0].sixDesc
-      portfolio.sevenTitle = resp.data[0].sevenTitle
-      portfolio.sevenDesc = resp.data[0].sevenDesc
-      portfolio.eightTitle = resp.data[0].eightTitle
-      portfolio.eightDesc = resp.data[0].eightDesc
-    })
+
     axios.get('https://hudos-admin.vercel.app/api/projects').then((resp) => {
       const projects = store.fetchResult.projects
       projects.designTitleOne = resp.data[0].designTitleOne
@@ -627,7 +668,6 @@ const store = reactive({
 
     if (this.currentStep === this.getStep(3).value) {
       // Submit form
-      console.log(store.form)
       this.resetForm()
 
       setTimeout(() => {
