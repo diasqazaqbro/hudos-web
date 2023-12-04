@@ -20,6 +20,8 @@ const store = reactive({
     let obj = document.querySelectorAll(`#${id}`)[0]
     obj.style.display = 'none'
   },
+  paramsId: '',
+  portfolioItem: '',
   fetchResult: {
     faq: {
       oneTitle: 'loading...',
@@ -252,8 +254,6 @@ const store = reactive({
           requests.push(
             axios.get(`${apiUrl}/${nextImgId}`).then((response) => {
               const imagePath = response.data.image
-              console.log(`Image for imgId ${nextImgId}:  ${url}${imagePath}`)
-
               portfolioMap[item.imgId].images.push(`${url}${imagePath}`)
             })
           )
@@ -265,7 +265,6 @@ const store = reactive({
       const portfolioArray = Object.values(portfolioMap)
       setTimeout(() => {
         store.fetchResult.portfolioAfter = portfolioArray;
-        console.log('32131infooooo', store.fetchResult.portfolioAfter);
       }, 1000); 
     }
 
@@ -273,7 +272,18 @@ const store = reactive({
       imgFetch()
     }, 1000)
 
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
 
+    const paramsId = urlParams.get('id');
+
+    console.log('Parameter 1:', paramsId);
+
+    setTimeout(() => {
+      const filterPortfolio = store.fetchResult.portfolioAfter.filter(i => i._id === paramsId)
+      store.portfolioItem = filterPortfolio
+      console.log(store.portfolioItem[0].title);
+    },2500)
     axios.get('https://hudos-admin.vercel.app/api/portfolio').then((resp) => {
       store.fetchResult.portfolio = resp.data
       store.portfolio = resp.data
