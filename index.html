@@ -318,110 +318,16 @@
           <div class="lg:max-w-sm xl:max-w-lg">
             <ul data-control data-anim>
               <li
+                v-for="(item, index) in store.designItem"
+                :key="index"
                 class="group flex cursor-pointer items-center justify-between border-b border-main py-5 text-main"
               >
                 <h4 class="text-xl font-bold uppercase">
-                  <span class="mr-5">01</span>
-                  <span>{{store.fetchResult.projects.designTitleOne}}</span>
+                  <span class="mr-5">0{{index + 1}}</span>
+                  <span>{{item.title}}</span>
                 </h4>
                 <svg
                   class="h-6 w-6 fill-main"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M19.291 4H14.9981V3H20.9981V9H19.9981V4.70711L12.8516 11.8536L12.1445 11.1464L19.291 4Z"
-                  />
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M7.5 6C6.67157 6 6 6.67157 6 7.5V16.5C6 17.3284 6.67157 18 7.5 18H16.5C17.3284 18 18 17.3284 18 16.5V12.5C18 12.2239 18.2239 12 18.5 12C18.7761 12 19 12.2239 19 12.5V16.5C19 17.8807 17.8807 19 16.5 19H7.5C6.11929 19 5 17.8807 5 16.5V7.5C5 6.11929 6.11929 5 7.5 5H11.5C11.7761 5 12 5.22386 12 5.5C12 5.77614 11.7761 6 11.5 6H7.5Z"
-                  />
-                </svg>
-              </li>
-              <li
-                class="group flex cursor-pointer items-center justify-between border-b border-gray-light py-5 text-gray transition-colors hover:text-main"
-              >
-                <h4 class="text-xl font-light uppercase">
-                  <span class="mr-5">02</span>
-                  <span>{{store.fetchResult.projects.designTitleTwo}}</span>
-                </h4>
-                <svg
-                  class="hidden h-6 w-6 fill-main"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M19.291 4H14.9981V3H20.9981V9H19.9981V4.70711L12.8516 11.8536L12.1445 11.1464L19.291 4Z"
-                  />
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M7.5 6C6.67157 6 6 6.67157 6 7.5V16.5C6 17.3284 6.67157 18 7.5 18H16.5C17.3284 18 18 17.3284 18 16.5V12.5C18 12.2239 18.2239 12 18.5 12C18.7761 12 19 12.2239 19 12.5V16.5C19 17.8807 17.8807 19 16.5 19H7.5C6.11929 19 5 17.8807 5 16.5V7.5C5 6.11929 6.11929 5 7.5 5H11.5C11.7761 5 12 5.22386 12 5.5C12 5.77614 11.7761 6 11.5 6H7.5Z"
-                  />
-                </svg>
-              </li>
-              <li
-                class="group flex cursor-pointer items-center justify-between border-b border-gray-light py-5 text-gray transition-colors hover:text-main"
-              >
-                <h4 class="text-xl font-light uppercase">
-                  <span class="mr-5">03</span>
-                  <span>{{store.fetchResult.projects.designTitleThree}}</span>
-                </h4>
-                <svg
-                  class="hidden h-6 w-6 fill-main"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M19.291 4H14.9981V3H20.9981V9H19.9981V4.70711L12.8516 11.8536L12.1445 11.1464L19.291 4Z"
-                  />
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M7.5 6C6.67157 6 6 6.67157 6 7.5V16.5C6 17.3284 6.67157 18 7.5 18H16.5C17.3284 18 18 17.3284 18 16.5V12.5C18 12.2239 18.2239 12 18.5 12C18.7761 12 19 12.2239 19 12.5V16.5C19 17.8807 17.8807 19 16.5 19H7.5C6.11929 19 5 17.8807 5 16.5V7.5C5 6.11929 6.11929 5 7.5 5H11.5C11.7761 5 12 5.22386 12 5.5C12 5.77614 11.7761 6 11.5 6H7.5Z"
-                  />
-                </svg>
-              </li>
-              <li
-                class="group flex cursor-pointer items-center justify-between border-b border-gray-light py-5 text-gray transition-colors hover:text-main"
-              >
-                <h4 class="text-xl font-light uppercase">
-                  <span class="mr-5">04</span>
-                  <span>{{store.fetchResult.projects.designTitleFour}}</span>
-                </h4>
-                <svg
-                  class="hidden h-6 w-6 fill-main"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M19.291 4H14.9981V3H20.9981V9H19.9981V4.70711L12.8516 11.8536L12.1445 11.1464L19.291 4Z"
-                  />
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M7.5 6C6.67157 6 6 6.67157 6 7.5V16.5C6 17.3284 6.67157 18 7.5 18H16.5C17.3284 18 18 17.3284 18 16.5V12.5C18 12.2239 18.2239 12 18.5 12C18.7761 12 19 12.2239 19 12.5V16.5C19 17.8807 17.8807 19 16.5 19H7.5C6.11929 19 5 17.8807 5 16.5V7.5C5 6.11929 6.11929 5 7.5 5H11.5C11.7761 5 12 5.22386 12 5.5C12 5.77614 11.7761 6 11.5 6H7.5Z"
-                  />
-                </svg>
-              </li>
-              <li
-                class="group flex cursor-pointer items-center justify-between border-b border-gray-light py-5 text-gray transition-colors hover:text-main"
-              >
-                <h4 class="text-xl font-light uppercase">
-                  <span class="mr-5">05</span>
-                  <span>{{store.fetchResult.projects.designTitleFive}}</span>
-                </h4>
-                <svg
-                  class="hidden h-6 w-6 fill-main"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                 >
@@ -440,62 +346,16 @@
             </ul>
             <ul data-control>
               <li
+                v-for="(item, index) in store.architectureItem"
+                :key="index"
                 class="group flex cursor-pointer items-center justify-between border-b border-main py-5 text-main"
               >
                 <h4 class="text-xl font-bold uppercase">
-                  <span class="mr-5">01</span>
-                  <span>{{store.fetchResult.projects.aTitleOne}}</span>
+                  <span class="mr-5">0{{index + 1}}</span>
+                  <span>{{item.title}}</span>
                 </h4>
                 <svg
                   class="h-6 w-6 fill-main"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M19.291 4H14.9981V3H20.9981V9H19.9981V4.70711L12.8516 11.8536L12.1445 11.1464L19.291 4Z"
-                  />
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M7.5 6C6.67157 6 6 6.67157 6 7.5V16.5C6 17.3284 6.67157 18 7.5 18H16.5C17.3284 18 18 17.3284 18 16.5V12.5C18 12.2239 18.2239 12 18.5 12C18.7761 12 19 12.2239 19 12.5V16.5C19 17.8807 17.8807 19 16.5 19H7.5C6.11929 19 5 17.8807 5 16.5V7.5C5 6.11929 6.11929 5 7.5 5H11.5C11.7761 5 12 5.22386 12 5.5C12 5.77614 11.7761 6 11.5 6H7.5Z"
-                  />
-                </svg>
-              </li>
-              <li
-                class="group flex cursor-pointer items-center justify-between border-b border-gray-light py-5 text-gray transition-colors hover:text-main"
-              >
-                <h4 class="text-xl font-light uppercase">
-                  <span class="mr-5">02</span>
-                  <span>{{store.fetchResult.projects.aTitleTwo}}</span>
-                </h4>
-                <svg
-                  class="hidden h-6 w-6 fill-main"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M19.291 4H14.9981V3H20.9981V9H19.9981V4.70711L12.8516 11.8536L12.1445 11.1464L19.291 4Z"
-                  />
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M7.5 6C6.67157 6 6 6.67157 6 7.5V16.5C6 17.3284 6.67157 18 7.5 18H16.5C17.3284 18 18 17.3284 18 16.5V12.5C18 12.2239 18.2239 12 18.5 12C18.7761 12 19 12.2239 19 12.5V16.5C19 17.8807 17.8807 19 16.5 19H7.5C6.11929 19 5 17.8807 5 16.5V7.5C5 6.11929 6.11929 5 7.5 5H11.5C11.7761 5 12 5.22386 12 5.5C12 5.77614 11.7761 6 11.5 6H7.5Z"
-                  />
-                </svg>
-              </li>
-              <li
-                class="group flex cursor-pointer items-center justify-between border-b border-gray-light py-5 text-gray transition-colors hover:text-main"
-              >
-                <h4 class="text-xl font-light uppercase">
-                  <span class="mr-5">03</span>
-                  <span>{{store.fetchResult.projects.aTitleThree}}</span>
-                </h4>
-                <svg
-                  class="hidden h-6 w-6 fill-main"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                 >
@@ -522,13 +382,13 @@
             data-count
             class="absolute bottom-4 left-4 z-10 text-xl font-light text-white md:bottom-7 md:left-7"
           >
-            1 / 5
+            1 / {{store.designItem.length}}
           </div>
           <div
             data-count
             class="absolute bottom-4 left-4 z-10 text-xl font-light text-white md:bottom-7 md:left-7"
           >
-            1 / 3
+            1 / {{store.architectureItem.length}}
           </div>
           <div
             data-dots
@@ -543,38 +403,10 @@
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
               <!-- Slides -->
-              <div class="swiper-slide">
+              <div :key="index" v-for="(item, index) in store.designItem" class="swiper-slide">
                 <img
                   class="h-full w-full object-cover object-center"
-                  :src="store.fetchResult.images.i3"
-                  alt="image"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  class="h-full w-full object-cover object-center"
-                  :src="store.fetchResult.images.i4"
-                  alt="image"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  class="h-full w-full object-cover object-center"
-                  :src="store.fetchResult.images.i5"
-                  alt="image"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  class="h-full w-full object-cover object-center"
-                  :src="store.fetchResult.images.i6"
-                  alt="image"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  class="h-full w-full object-cover object-center"
-                  :src="store.fetchResult.images.i7"
+                  :src="item.images[0]"
                   alt="image"
                 />
               </div>
@@ -585,24 +417,10 @@
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
               <!-- Slides -->
-              <div class="swiper-slide">
+              <div :key="index" v-for="(item, index) in store.architectureItem" class="swiper-slide">
                 <img
                   class="h-full w-full object-cover object-center"
-                  :src="store.fetchResult.images.i8"
-                  alt="image"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  class="h-full w-full object-cover object-center"
-                  :src="store.fetchResult.images.i9"
-                  alt="image"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  class="h-full w-full object-cover object-center"
-                  :src="store.fetchResult.images.i10"
+                  :src="item.images[0]"
                   alt="image"
                 />
               </div>
@@ -1004,24 +822,29 @@
           class="container border-b border-gray-light border-opacity-30 pb-[50px] md:pb-[130px]"
         >
           <h2 class="mb-2 md:mb-7" data-anim>
-            <span class="font-bold">{{store.fetchResult.partners.accent}} </span
+            <span class="font-bold"
+              >{{store.fetchResult.partners.accent}}
+            </span>
+
+            <span
+              v-for="(part, index) in store.fetchResult.partners.title.split('|')"
+              :key="index"
             >
-            
-            <span v-for="(part, index) in store.fetchResult.partners.title.split('|')"
-            :key="index">
               {{part}}
-              <br>
-          </span>
+              <br />
+            </span>
           </h2>
           <p
-            style="margin-bottom: 40px;"
+            style="margin-bottom: 40px"
             data-anim
             class="partners-text mb-5 text-xl md:mb-7"
           >
-            <span v-for="(part, index) in store.fetchResult.partners.desc.split('|')"
-            :key="index">
-            {{part}}
-            <br>
+            <span
+              v-for="(part, index) in store.fetchResult.partners.desc.split('|')"
+              :key="index"
+            >
+              {{part}}
+              <br />
             </span>
           </p>
           <div

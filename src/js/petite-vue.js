@@ -20,8 +20,9 @@ const store = reactive({
     let obj = document.querySelectorAll(`#${id}`)[0]
     obj.style.display = 'none'
   },
-  paramsId: '',
   portfolioItem: '',
+  designItem: '',
+  architectureItem: '',
   fetchResult: {
     faq: {
       oneTitle: 'loading...',
@@ -277,13 +278,22 @@ const store = reactive({
 
     const paramsId = urlParams.get('id');
 
-    console.log('Parameter 1:', paramsId);
-
     setTimeout(() => {
       const filterPortfolio = store.fetchResult.portfolioAfter.filter(i => i._id === paramsId)
       store.portfolioItem = filterPortfolio
-      console.log(store.portfolioItem[0].title);
     },2500)
+    setTimeout(() => {
+      const filterPortfolio = store.fetchResult.portfolioAfter.filter(i => i.construction === 'design')
+      store.designItem = filterPortfolio
+      console.log(store.designItem);
+    },2500)
+
+    setTimeout(() => {
+      const filterPortfolio = store.fetchResult.portfolioAfter.filter(i => i.construction === 'architecture')
+      store.architectureItem = filterPortfolio
+      console.log(store.architectureItem);
+    },2500)
+
     axios.get('https://hudos-admin.vercel.app/api/portfolio').then((resp) => {
       store.fetchResult.portfolio = resp.data
       store.portfolio = resp.data
