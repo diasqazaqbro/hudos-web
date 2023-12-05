@@ -12,14 +12,6 @@ const store = reactive({
     phone: '',
   },
   isVisible: false,
-  openModal(id, number) {
-    let obj = document.querySelectorAll(`#${id}`)[0]
-    obj.style.display = 'flex'
-  },
-  closeSecondModal(id) {
-    let obj = document.querySelectorAll(`#${id}`)[0]
-    obj.style.display = 'none'
-  },
   portfolioItem: '',
   designItem: '',
   architectureItem: '',
@@ -264,9 +256,7 @@ const store = reactive({
       await Promise.all(requests)
 
       const portfolioArray = Object.values(portfolioMap)
-      setTimeout(() => {
         store.fetchResult.portfolioAfter = portfolioArray;
-      }, 1000); 
     }
 
     setTimeout(() => {
@@ -281,18 +271,18 @@ const store = reactive({
     setTimeout(() => {
       const filterPortfolio = store.fetchResult.portfolioAfter.filter(i => i._id === paramsId)
       store.portfolioItem = filterPortfolio
-    },2500)
+    },2000)
     setTimeout(() => {
       const filterPortfolio = store.fetchResult.portfolioAfter.filter(i => i.construction === 'design')
       store.designItem = filterPortfolio
       console.log(store.designItem);
-    },2500)
+    },1500)
 
     setTimeout(() => {
       const filterPortfolio = store.fetchResult.portfolioAfter.filter(i => i.construction === 'architecture')
       store.architectureItem = filterPortfolio
       console.log(store.architectureItem);
-    },2500)
+    },1500)
 
     axios.get('https://hudos-admin.vercel.app/api/portfolio').then((resp) => {
       store.fetchResult.portfolio = resp.data

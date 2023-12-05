@@ -111,81 +111,77 @@
         class="pb-[100px] pt-[120px] md:pb-[140px] md:pt-[220px]"
       >
         <div class="container">
-          <h2 data-anim class="mb-[60px] text-center font-bold">
-            Наши проекты
-          </h2>
-            <h2 data-anim class="mb-[60px] text-center font-bold">
+          <img
+            style="height: 400px"
+            class="w-full rounded-md object-cover"
+            :src="store.portfolioItem[0].images[0]"
+            alt="benefits"
+            data-anim-container="stager"
+          />
+          <div class="item">
+            <h2 data-anim class="item__h text-center">
               {{ store.portfolioItem[0].title }}
             </h2>
-            <div class="grid grid-cols-3 gap-4">
+            <div class="item__desc">{{ store.portfolioItem[0].supTitle }}</div>
+            <p class="item__type">{{ store.portfolioItem[0].desc }}</p>
+          </div>
+          <h2 data-anim class="mb-[60px] text-center font-bold"></h2>
+          <div class="grid grid-cols-1 gap-5">
+            <img
+              style="height: 400px"
+              class="h-full w-full rounded-md object-cover"
+              :src="store.portfolioItem[0].images[1]"
+              alt="benefits"
+              data-anim-container="stager"
+            />
+            <div class="grid grid-cols-2 gap-5">
               <img
-                v-for="(photo, index) in store.portfolioItem[0].images"
-                :key="index"
-                class="h-48 w-full rounded-md object-cover"
-                :src="photo"
+                style="height: 400px"
+                class="h-full w-full rounded-md object-cover"
+                :src="store.portfolioItem[0].images[2]"
                 alt="benefits"
+                data-anim-container="stager"
               />
+              <img
+                style="height: 400px"
+                class="h-full w-full rounded-md object-cover"
+                :src="store.portfolioItem[0].images[3]"
+                alt="benefits"
+                data-anim-container="stager"
+              />
+              
             </div>
-        </div>
-      </section>
-      <section
-        data-anim-container="stager"
-        class="relative bg-main pt-[190px] md-m:pb-3 md:py-[90px] md:pt-40"
-      >
-        <div class="container relative z-10 md:flex md:justify-between">
-          <div class="md-m:mb-5 md:max-w-[468px]">
-            <p data-anim class="mb-5 text-sm font-light text-white md:text-xl">
-              Акция на 3D проектирование
-            </p>
-            <h2 data-anim class="mb-5 text-white">
-              <span class="font-bold">Стройте сейчас,</span> <br />
-              Платите потом!
-            </h2>
-            <button
-              data-anim
-              @click="store.showModal(false)"
-              class="mb-5 w-full bg-accent p-4 transition-colors hover:bg-accent-light hover:text-white active:bg-accent-darken sm:w-64 md:mb-12"
-            >
-              Оставить контакт
-            </button>
-            <div
-              class="flex items-center md-m:-mr-4 md-m:space-x-10 md-m:overflow-x-auto md:grid md:max-w-[430px] md:grid-cols-3 md:gap-10"
-            >
-              <img
-                data-anim
-                class="md-m:w-36"
-                src="./image/sponsor-1.png"
-                alt="sponsor"
+            <img
+                style="height: 400px"
+                class="h-full w-full rounded-md object-cover"
+                :src="store.portfolioItem[0].images[4]"
+                alt="benefits"
+                data-anim-container="stager"
               />
               <img
-                data-anim
-                class="md-m:w-36"
-                src="./image/sponsor-2.png"
-                alt="sponsor"
+                style="height: 400px"
+                class="h-full w-full rounded-md object-cover"
+                :src="store.portfolioItem[0].images[5]"
+                alt="benefits"
+                data-anim-container="stager"
               />
-              <img
-                data-anim
-                class="md-m:w-20"
-                src="./image/sponsor-3.png"
-                alt="sponsor"
-              />
-            </div>
+              <div class="grid grid-cols-2 gap-5">
+                <img
+                  style="height: 400px"
+                  class="h-full w-full rounded-md object-cover"
+                  :src="store.portfolioItem[0].images[6]"
+                  alt="benefits"
+                  data-anim-container="stager"
+                />
+                <img
+                  style="height: 400px"
+                  class="h-full w-full rounded-md object-cover"
+                  :src="store.portfolioItem[0].images[7]"
+                  alt="benefits"
+                  data-anim-container="stager"
+                />
+              </div>
           </div>
-          <div data-anim class="md-m:text-center md:self-end">
-            <span class="text-xs text-gray"
-              >*Только для граждан Казахстана</span
-            >
-          </div>
-        </div>
-        <div
-          data-anim
-          class="absolute -top-7 right-0 w-[360px] overflow-hidden md-m:h-[190px] md:-top-20 lg:-top-10 lg:w-[450px] xl:w-[705px]"
-        >
-          <img
-            class="relative -right-4 w-full md-m:h-full"
-            src="./image/image-4.jpg"
-            alt="image"
-          />
         </div>
       </section>
     </main>

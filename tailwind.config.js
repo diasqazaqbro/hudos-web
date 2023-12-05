@@ -8,6 +8,7 @@ export default {
     './price.html',
     './not-found.html',
     './portfolio.html',
+    './item.html',
     './src/**/*.{html,js}',
   ],
   theme: {

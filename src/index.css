@@ -96,7 +96,6 @@
 .projects {
   position: relative;
   overflow: hidden;
-  
 }
 
 .p__img {
@@ -123,11 +122,35 @@
 }
 
 .p__suptitle {
-  font-size: clamp(8px,0.83328vw,32px);
+  font-size: clamp(8px, 0.83328vw, 32px);
   color: white;
 }
 
+.item {
+  border-radius: 20px;
+  background-color: #fafafa;
+  background-position: center center;
+  border-color: transparent;
+  border-style: solid;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 40px 0;
+  padding: 20px 10px;
+}
 
+.item__desc {
+  color: #282828;
+  font-size: 15px;
+  line-height: 1.55;
+  font-weight: 400;
+}
+.item__type {
+  color: #282828;
+  font-size: 15px;
+  line-height: 1.55;
+  font-weight: 400;
+}
 @keyframes lds-roller {
   0% {
     transform: rotate(0deg);

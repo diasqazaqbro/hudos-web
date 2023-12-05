@@ -114,55 +114,10 @@
           <h2 data-anim class="mb-[60px] text-center font-bold">
             Наши проекты
           </h2>
-          <div
-            v-for="(item, index) in store.fetchResult.portfolioAfter"
-            :key="index"
-            :id="item.title"
-            :class="['animate-fade-in tall:pt-[30px] tall:!items-start hidden fixed inset-0 left-0 top-0 z-50 h-full w-full flex items-center justify-center overflow-auto bg-main bg-opacity-80 transition-opacity md:items-center md-m:items-end ']"
-          >
-            <div class="w-2/4 overflow-hidden rounded-md bg-white">
-              <div class="flex justify-end p-4">
-                <button
-                  @click="store.closeSecondModal(item.title)"
-                  class="text-gray-600 hover:text-gray-800"
-                >
-                  <svg
-                    class="h-6 w-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M6 18L18 6M6 6l12 12"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-              <div class="p-8">
-                <h2 data-anim class="mb-[60px] text-center font-bold">
-                  {{ item.title }}
-                </h2>
-                <div class="grid grid-cols-3 gap-4">
-                  <img
-                    v-for="(photo, index) in item.images"
-                    :key="index"
-                    class="h-48 w-full rounded-md object-cover"
-                    :src="photo"
-                    alt="benefits"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
           <div class="relative">
             <div class="grid grid-cols-2 gap-[60px]">
               <a
                 :href="`item.html?id=${item._id}`"
-                @click="store.openModal(item.title)"
                 v-for="(item, index) in store.fetchResult.portfolioAfter"
                 :key="index"
                 class="projects"
