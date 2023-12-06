@@ -262,222 +262,354 @@
         />
       </div>
       <section
-        data-anim-container="stager"
-        class="relative overflow-hidden py-[80px] lg-m:flex lg-m:flex-col md:py-[130px] lg:min-h-[860px]"
-      >
-        <div class="container mb-10 lg-m:order-1 lg:mb-16">
-          <div class="lg:max-w-sm xl:max-w-lg">
-            <h2 data-anim class="mb-[30px] font-bold">
-              Последние <br />
-              проекты
-            </h2>
-            <div
-              class="flex xl-m:flex-col xl-m:space-y-6 xl:items-center xl:space-x-12"
+      data-anim-container="stager"
+      class="relative overflow-hidden py-[80px] lg-m:flex lg-m:flex-col md:py-[130px] lg:min-h-[860px]"
+    >
+      <div class="container mb-10 lg-m:order-1 lg:mb-16">
+        <div class="lg:max-w-sm xl:max-w-lg">
+          <h2 data-anim class="mb-[30px] font-bold">
+            Последние <br />
+            проекты
+          </h2>
+          <div
+            class="flex xl-m:flex-col xl-m:space-y-6 xl:items-center xl:space-x-12"
+          >
+            <label
+              data-anim
+              class="group/label relative block cursor-pointer select-none pl-9 text-xl"
             >
-              <label
-                data-anim
-                class="group/label relative block cursor-pointer select-none pl-9 text-xl"
+              <input
+                class="peer absolute cursor-pointer opacity-0"
+                type="radio"
+                checked="checked"
+                name="slider-radio"
+              />
+              <span
+                class="absolute left-0 top-1/2 h-7 w-7 -translate-y-1/2 rounded-full border border-gray bg-bgc after:absolute after:left-1/2 after:top-1/2 after:h-5 after:w-5 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:bg-main after:opacity-0 after:transition-all group-hover/label:border-main peer-checked:border-main peer-checked:after:opacity-100"
+              ></span>
+              <span
+                class="font-light text-gray transition-colors group-hover/label:text-main peer-checked:text-main"
               >
-                <input
-                  class="peer absolute cursor-pointer opacity-0"
-                  type="radio"
-                  checked="checked"
-                  name="slider-radio"
-                />
-                <span
-                  class="absolute left-0 top-1/2 h-7 w-7 -translate-y-1/2 rounded-full border border-gray bg-bgc after:absolute after:left-1/2 after:top-1/2 after:h-5 after:w-5 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:bg-main after:opacity-0 after:transition-all group-hover/label:border-main peer-checked:border-main peer-checked:after:opacity-100"
-                ></span>
-                <span
-                  class="font-light text-gray transition-colors group-hover/label:text-main peer-checked:text-main"
-                >
-                  Дизайн интерьера
-                </span>
-              </label>
-              <label
-                data-anim
-                class="group/label relative block cursor-pointer select-none pl-9 text-xl"
+                Дизайн интерьера
+              </span>
+            </label>
+            <label
+              data-anim
+              class="group/label relative block cursor-pointer select-none pl-9 text-xl"
+            >
+              <input
+                class="peer absolute cursor-pointer opacity-0"
+                type="radio"
+                name="slider-radio"
+              />
+              <span
+                class="absolute left-0 top-1/2 h-7 w-7 -translate-y-1/2 rounded-full border border-gray bg-bgc after:absolute after:left-1/2 after:top-1/2 after:h-5 after:w-5 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:bg-main after:opacity-0 after:transition-all group-hover/label:border-main peer-checked:border-main peer-checked:after:opacity-100"
+              ></span>
+              <span
+                class="font-light text-gray transition-colors group-hover/label:text-main peer-checked:text-main"
               >
-                <input
-                  class="peer absolute cursor-pointer opacity-0"
-                  type="radio"
-                  name="slider-radio"
-                />
-                <span
-                  class="absolute left-0 top-1/2 h-7 w-7 -translate-y-1/2 rounded-full border border-gray bg-bgc after:absolute after:left-1/2 after:top-1/2 after:h-5 after:w-5 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:bg-main after:opacity-0 after:transition-all group-hover/label:border-main peer-checked:border-main peer-checked:after:opacity-100"
-                ></span>
-                <span
-                  class="font-light text-gray transition-colors group-hover/label:text-main peer-checked:text-main"
-                >
-                  Архитектура
-                </span>
-              </label>
-            </div>
+                Архитектура
+              </span>
+            </label>
           </div>
         </div>
-        <div class="container lg-m:order-3 lg-m:mt-10">
-          <div class="lg:max-w-sm xl:max-w-lg">
-            <ul data-control data-anim>
-              <li
-                v-for="(item, index) in store.designItem"
-                :key="index"
-                class="group flex cursor-pointer items-center justify-between border-b border-main py-5 text-main"
+      </div>
+      <div class="container lg-m:order-3 lg-m:mt-10">
+        <div class="lg:max-w-sm xl:max-w-lg">
+          <ul data-control data-anim>
+            <a
+            :href="store.fetchResult.projects.designLinkOne"
+              class="group flex cursor-pointer items-center justify-between border-b border-main py-5 text-main"
+            >
+              <h4 class="text-xl font-bold uppercase">
+                <span class="mr-5">01</span> <span>{{store.fetchResult.projects.designTitleOne}}</span>
+              </h4>
+              <svg
+                class="h-6 w-6 fill-main"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
               >
-                <h4 class="text-xl font-bold uppercase">
-                  <span class="mr-5">0{{index + 1}}</span>
-                  <span>{{item.title}}</span>
-                </h4>
-                <svg
-                  class="h-6 w-6 fill-main"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M19.291 4H14.9981V3H20.9981V9H19.9981V4.70711L12.8516 11.8536L12.1445 11.1464L19.291 4Z"
-                  />
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M7.5 6C6.67157 6 6 6.67157 6 7.5V16.5C6 17.3284 6.67157 18 7.5 18H16.5C17.3284 18 18 17.3284 18 16.5V12.5C18 12.2239 18.2239 12 18.5 12C18.7761 12 19 12.2239 19 12.5V16.5C19 17.8807 17.8807 19 16.5 19H7.5C6.11929 19 5 17.8807 5 16.5V7.5C5 6.11929 6.11929 5 7.5 5H11.5C11.7761 5 12 5.22386 12 5.5C12 5.77614 11.7761 6 11.5 6H7.5Z"
-                  />
-                </svg>
-              </li>
-            </ul>
-            <ul data-control>
-              <li
-                v-for="(item, index) in store.architectureItem"
-                :key="index"
-                class="group flex cursor-pointer items-center justify-between border-b border-main py-5 text-main"
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M19.291 4H14.9981V3H20.9981V9H19.9981V4.70711L12.8516 11.8536L12.1445 11.1464L19.291 4Z"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M7.5 6C6.67157 6 6 6.67157 6 7.5V16.5C6 17.3284 6.67157 18 7.5 18H16.5C17.3284 18 18 17.3284 18 16.5V12.5C18 12.2239 18.2239 12 18.5 12C18.7761 12 19 12.2239 19 12.5V16.5C19 17.8807 17.8807 19 16.5 19H7.5C6.11929 19 5 17.8807 5 16.5V7.5C5 6.11929 6.11929 5 7.5 5H11.5C11.7761 5 12 5.22386 12 5.5C12 5.77614 11.7761 6 11.5 6H7.5Z"
+                />
+              </svg>
+            </a>
+            <a
+            :href="store.fetchResult.projects.designLinkTwo"
+              class="group flex cursor-pointer items-center justify-between border-b border-gray-light py-5 text-gray transition-colors hover:text-main"
+            >
+              <h4 class="text-xl font-light uppercase">
+                <span class="mr-5">02</span> <span>{{store.fetchResult.projects.designTitleTwo}}</span>
+              </h4>
+              <svg
+                class="hidden h-6 w-6 fill-main"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
               >
-                <h4 class="text-xl font-bold uppercase">
-                  <span class="mr-5">0{{index + 1}}</span>
-                  <span>{{item.title}}</span>
-                </h4>
-                <svg
-                  class="h-6 w-6 fill-main"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M19.291 4H14.9981V3H20.9981V9H19.9981V4.70711L12.8516 11.8536L12.1445 11.1464L19.291 4Z"
-                  />
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M7.5 6C6.67157 6 6 6.67157 6 7.5V16.5C6 17.3284 6.67157 18 7.5 18H16.5C17.3284 18 18 17.3284 18 16.5V12.5C18 12.2239 18.2239 12 18.5 12C18.7761 12 19 12.2239 19 12.5V16.5C19 17.8807 17.8807 19 16.5 19H7.5C6.11929 19 5 17.8807 5 16.5V7.5C5 6.11929 6.11929 5 7.5 5H11.5C11.7761 5 12 5.22386 12 5.5C12 5.77614 11.7761 6 11.5 6H7.5Z"
-                  />
-                </svg>
-              </li>
-            </ul>
-          </div>
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M19.291 4H14.9981V3H20.9981V9H19.9981V4.70711L12.8516 11.8536L12.1445 11.1464L19.291 4Z"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M7.5 6C6.67157 6 6 6.67157 6 7.5V16.5C6 17.3284 6.67157 18 7.5 18H16.5C17.3284 18 18 17.3284 18 16.5V12.5C18 12.2239 18.2239 12 18.5 12C18.7761 12 19 12.2239 19 12.5V16.5C19 17.8807 17.8807 19 16.5 19H7.5C6.11929 19 5 17.8807 5 16.5V7.5C5 6.11929 6.11929 5 7.5 5H11.5C11.7761 5 12 5.22386 12 5.5C12 5.77614 11.7761 6 11.5 6H7.5Z"
+                />
+              </svg>
+            </a>
+            <a
+            :href="store.fetchResult.projects.designLinkThree"
+              class="group flex cursor-pointer items-center justify-between border-b border-gray-light py-5 text-gray transition-colors hover:text-main"
+            >
+              <h4 class="text-xl font-light uppercase">
+                <span class="mr-5">03</span> <span>{{store.fetchResult.projects.designTitleThree}}</span>
+              </h4>
+              <svg
+                class="hidden h-6 w-6 fill-main"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M19.291 4H14.9981V3H20.9981V9H19.9981V4.70711L12.8516 11.8536L12.1445 11.1464L19.291 4Z"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M7.5 6C6.67157 6 6 6.67157 6 7.5V16.5C6 17.3284 6.67157 18 7.5 18H16.5C17.3284 18 18 17.3284 18 16.5V12.5C18 12.2239 18.2239 12 18.5 12C18.7761 12 19 12.2239 19 12.5V16.5C19 17.8807 17.8807 19 16.5 19H7.5C6.11929 19 5 17.8807 5 16.5V7.5C5 6.11929 6.11929 5 7.5 5H11.5C11.7761 5 12 5.22386 12 5.5C12 5.77614 11.7761 6 11.5 6H7.5Z"
+                />
+              </svg>
+            </a>
+            <a
+            :href="store.fetchResult.projects.designLinkFour"
+              class="group flex cursor-pointer items-center justify-between border-b border-gray-light py-5 text-gray transition-colors hover:text-main"
+            >
+              <h4 class="text-xl font-light uppercase">
+                <span class="mr-5">04</span> <span>{{store.fetchResult.projects.designTitleFour}}</span>
+              </h4>
+              <svg
+                class="hidden h-6 w-6 fill-main"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M19.291 4H14.9981V3H20.9981V9H19.9981V4.70711L12.8516 11.8536L12.1445 11.1464L19.291 4Z"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M7.5 6C6.67157 6 6 6.67157 6 7.5V16.5C6 17.3284 6.67157 18 7.5 18H16.5C17.3284 18 18 17.3284 18 16.5V12.5C18 12.2239 18.2239 12 18.5 12C18.7761 12 19 12.2239 19 12.5V16.5C19 17.8807 17.8807 19 16.5 19H7.5C6.11929 19 5 17.8807 5 16.5V7.5C5 6.11929 6.11929 5 7.5 5H11.5C11.7761 5 12 5.22386 12 5.5C12 5.77614 11.7761 6 11.5 6H7.5Z"
+                />
+              </svg>
+            </a>
+            <a
+            :href="store.fetchResult.projects.designLinkFive"
+              class="group flex cursor-pointer items-center justify-between border-b border-gray-light py-5 text-gray transition-colors hover:text-main"
+            >
+              <h4 class="text-xl font-light uppercase">
+                <span class="mr-5">05</span> <span>{{store.fetchResult.projects.designTitleFive}}</span>
+              </h4>
+              <svg
+                class="hidden h-6 w-6 fill-main"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M19.291 4H14.9981V3H20.9981V9H19.9981V4.70711L12.8516 11.8536L12.1445 11.1464L19.291 4Z"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M7.5 6C6.67157 6 6 6.67157 6 7.5V16.5C6 17.3284 6.67157 18 7.5 18H16.5C17.3284 18 18 17.3284 18 16.5V12.5C18 12.2239 18.2239 12 18.5 12C18.7761 12 19 12.2239 19 12.5V16.5C19 17.8807 17.8807 19 16.5 19H7.5C6.11929 19 5 17.8807 5 16.5V7.5C5 6.11929 6.11929 5 7.5 5H11.5C11.7761 5 12 5.22386 12 5.5C12 5.77614 11.7761 6 11.5 6H7.5Z"
+                />
+              </svg>
+            </a>
+          </ul>
+          <ul data-control>
+            <a
+            :href="store.fetchResult.projects.aLinkOne"
+              class="group flex cursor-pointer items-center justify-between border-b border-main py-5 text-main"
+            >
+              <h4 class="text-xl font-bold uppercase">
+                <span class="mr-5">01</span> <span>{{store.fetchResult.projects.aTitleOne}}</span>
+              </h4>
+              <svg
+                class="h-6 w-6 fill-main"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M19.291 4H14.9981V3H20.9981V9H19.9981V4.70711L12.8516 11.8536L12.1445 11.1464L19.291 4Z"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M7.5 6C6.67157 6 6 6.67157 6 7.5V16.5C6 17.3284 6.67157 18 7.5 18H16.5C17.3284 18 18 17.3284 18 16.5V12.5C18 12.2239 18.2239 12 18.5 12C18.7761 12 19 12.2239 19 12.5V16.5C19 17.8807 17.8807 19 16.5 19H7.5C6.11929 19 5 17.8807 5 16.5V7.5C5 6.11929 6.11929 5 7.5 5H11.5C11.7761 5 12 5.22386 12 5.5C12 5.77614 11.7761 6 11.5 6H7.5Z"
+                />
+              </svg>
+            </a>
+            <a
+            :href="store.fetchResult.projects.aLinkTwo"
+              class="group flex cursor-pointer items-center justify-between border-b border-gray-light py-5 text-gray transition-colors hover:text-main"
+            >
+              <h4 class="text-xl font-light uppercase">
+                <span class="mr-5">02</span> <span>{{store.fetchResult.projects.aTitleTwo}}</span>
+              </h4>
+              <svg
+                class="hidden h-6 w-6 fill-main"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M19.291 4H14.9981V3H20.9981V9H19.9981V4.70711L12.8516 11.8536L12.1445 11.1464L19.291 4Z"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M7.5 6C6.67157 6 6 6.67157 6 7.5V16.5C6 17.3284 6.67157 18 7.5 18H16.5C17.3284 18 18 17.3284 18 16.5V12.5C18 12.2239 18.2239 12 18.5 12C18.7761 12 19 12.2239 19 12.5V16.5C19 17.8807 17.8807 19 16.5 19H7.5C6.11929 19 5 17.8807 5 16.5V7.5C5 6.11929 6.11929 5 7.5 5H11.5C11.7761 5 12 5.22386 12 5.5C12 5.77614 11.7761 6 11.5 6H7.5Z"
+                />
+              </svg>
+            </a>
+            <a
+            :href="store.fetchResult.projects.aLinkThree"
+              class="group flex cursor-pointer items-center justify-between border-b border-gray-light py-5 text-gray transition-colors hover:text-main"
+            >
+              <h4 class="text-xl font-light uppercase">
+                <span class="mr-5">03</span> <span>{{store.fetchResult.projects.aTitleThree}}</span>
+              </h4>
+              <svg
+                class="hidden h-6 w-6 fill-main"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M19.291 4H14.9981V3H20.9981V9H19.9981V4.70711L12.8516 11.8536L12.1445 11.1464L19.291 4Z"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M7.5 6C6.67157 6 6 6.67157 6 7.5V16.5C6 17.3284 6.67157 18 7.5 18H16.5C17.3284 18 18 17.3284 18 16.5V12.5C18 12.2239 18.2239 12 18.5 12C18.7761 12 19 12.2239 19 12.5V16.5C19 17.8807 17.8807 19 16.5 19H7.5C6.11929 19 5 17.8807 5 16.5V7.5C5 6.11929 6.11929 5 7.5 5H11.5C11.7761 5 12 5.22386 12 5.5C12 5.77614 11.7761 6 11.5 6H7.5Z"
+                />
+              </svg>
+            </a>
+          </ul>
+        </div>
+      </div>
+      <div
+        data-anim
+        class="relative h-[360px] lg-m:order-2 lg:absolute lg:right-0 lg:top-[130px] lg:h-[600px] lg:w-[550px] xl:w-[700px] 2xl:left-1/2 2xl:right-auto"
+      >
+        <div
+          data-count
+          class="absolute bottom-[30px] left-[30px] z-10 text-xl font-light text-white"
+        >
+          1 / 5
         </div>
         <div
-          data-anim
-          class="relative h-[360px] lg-m:order-2 lg:absolute lg:right-0 lg:top-[130px] lg:h-[600px] lg:w-[550px] xl:w-[700px] 2xl:left-1/2 2xl:right-auto"
+          data-count
+          class="absolute bottom-[30px] left-[30px] z-10 text-xl font-light text-white"
         >
-          <div
-            data-count
-            class="absolute bottom-4 left-4 z-10 text-xl font-light text-white md:bottom-7 md:left-7"
-          >
-            1 / {{store.designItem.length}}
-          </div>
-          <div
-            data-count
-            class="absolute bottom-4 left-4 z-10 text-xl font-light text-white md:bottom-7 md:left-7"
-          >
-            1 / {{store.architectureItem.length}}
-          </div>
-          <div
-            data-dots
-            class="absolute !bottom-auto !left-auto !right-4 !top-4 z-10 flex !w-auto !transform-none flex-row space-y-[6px] md:!bottom-7 md:!right-7 md:!top-auto"
-          ></div>
-          <div
-            data-dots
-            class="absolute !bottom-auto !left-auto !right-4 !top-4 z-10 flex !w-auto !transform-none flex-row space-y-[6px] md:!bottom-7 md:!right-7 md:!top-auto"
-          ></div>
-          <!-- Slider main container -->
-          <div data-swiper class="h-full w-full">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-              <!-- Slides -->
-              <div :key="index" v-for="(item, index) in store.designItem" class="swiper-slide">
-                <img
-                  class="h-full w-full object-cover object-center"
-                  :src="item.images[0]"
-                  alt="image"
-                />
-              </div>
+          1 / 3
+        </div>
+        <div
+          data-dots
+          class="absolute !left-auto !right-7 !top-7 z-10 flex !transform-none flex-col space-y-[6px] md:!top-auto md:bottom-7"
+        ></div>
+        <div
+          data-dots
+          class="absolute !left-auto !right-7 !top-7 z-10 flex !transform-none flex-col space-y-[6px] md:!top-auto md:bottom-7"
+        ></div>
+        <!-- Slider main container -->
+        <div data-swiper class="h-full w-full">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <img
+                class="h-full w-full object-cover object-center"
+                :src="store.fetchResult.images.i3"
+                alt="image"
+              />
             </div>
-          </div>
-          <!-- Slider main container -->
-          <div data-swiper class="h-full w-full">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-              <!-- Slides -->
-              <div :key="index" v-for="(item, index) in store.architectureItem" class="swiper-slide">
-                <img
-                  class="h-full w-full object-cover object-center"
-                  :src="item.images[0]"
-                  alt="image"
-                />
-              </div>
+            <div class="swiper-slide">
+              <img
+                class="h-full w-full object-cover object-center"
+                :src="store.fetchResult.images.i4"
+                alt="image"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                class="h-full w-full object-cover object-center"
+                :src="store.fetchResult.images.i5"
+                alt="image"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                class="h-full w-full object-cover object-center"
+                :src="store.fetchResult.images.i6"
+                alt="image"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                class="h-full w-full object-cover object-center"
+                :src="store.fetchResult.images.i7"
+                alt="image"
+              />
             </div>
           </div>
         </div>
-      </section>
-      <section
-        data-anim-container="stager"
-        class="bg-[url('../image/image-3.jpg')] bg-cover bg-center bg-no-repeat py-12 md:pb-14 md:pt-24"
-      >
-        <div class="container">
-          <p data-anim class="mb-2 text-xl font-light md:mb-5">
-            Реализуем проекты от 60 кв.м
-          </p>
-          <h2 data-anim class="mb-5 md:mb-7">
-            <span class="font-bold">Бесплатная</span> консультация <br />
-            с дизайнером HUDOS
-          </h2>
-          <form
-            data-anim
-            @submit.prevent="store.showModal(2)"
-            class="flex max-w-[380px] flex-col space-y-px"
-          >
-            <div>
-              <input
-                type="text"
-                v-model="store.form.name"
-                placeholder="Ваше имя"
-                required
-                class="w-full bg-white px-5 py-4 outline-none"
+        <!-- Slider main container -->
+        <div data-swiper class="h-full w-full">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <img
+                class="h-full w-full object-cover object-center"
+                :src="store.fetchResult.images.i8"
+                alt="image"
               />
             </div>
-            <div>
-              <input
-                type="number"
-                required
-                v-model="store.form.phone"
-                placeholder="Номер телефона"
-                class="w-full bg-white px-5 py-4 outline-none [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none"
+            <div class="swiper-slide">
+              <img
+                class="h-full w-full object-cover object-center"
+                :src="store.fetchResult.images.i9"
+                alt="image"
               />
             </div>
-            <div class="self-end">
-              <button
-                type="submit"
-                class="group flex h-16 w-28 items-center justify-center bg-accent transition-colors hover:bg-accent-light"
-              >
-                <img
-                  class="w-11 group-hover:animate-slide-x"
-                  src="./image/arrow-right.svg"
-                  alt="arrow"
-                />
-              </button>
+            <div class="swiper-slide">
+              <img
+                class="h-full w-full object-cover object-center"
+                :src="store.fetchResult.images.i10"
+                alt="image"
+              />
             </div>
-          </form>
+          </div>
         </div>
-      </section>
+      </div>
+    </section>
       <section
         data-anim-container="stager"
         class="min-h-[875px] py-[80px] md:py-[130px]"

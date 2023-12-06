@@ -145,6 +145,14 @@ const store = reactive({
       aTitleOne: 'loading...',
       aTitleTwo: 'loading...',
       aTitleThree: 'loading...',
+      designLinkOne: '',
+      designLinkTwo: '',
+      designLinkThree: '',
+      designLinkFour: '',
+      designLinkFive: '',
+      aLinkOne: '',
+      aLinkTwo: '',
+      aLinkThree: '',
     },
   },
   isModalOpen: false,
@@ -373,6 +381,14 @@ const store = reactive({
       projects.aTitleOne = resp.data[0].aTitleOne
       projects.aTitleTwo = resp.data[0].aTitleTwo
       projects.aTitleThree = resp.data[0].aTitleThree
+      projects.designLinkOne = resp.data[0].designLinkOne
+      projects.designLinkTwo = resp.data[0].designLinkTwo
+      projects.designLinkThree = resp.data[0].designLinkThree
+      projects.designLinkFour = resp.data[0].designLinkFour
+      projects.designLinkFive = resp.data[0].designLinkFive
+      projects.aLinkOne = resp.data[0].aLinkOne
+      projects.aLinkTwo = resp.data[0].aLinkTwo
+      projects.aLinkThree = resp.data[0].aLinkThree
     })
     axios.get('https://hudos-admin.vercel.app/api/footer').then((resp) => {
       const footer = store.fetchResult.footer
