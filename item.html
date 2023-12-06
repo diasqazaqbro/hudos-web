@@ -395,8 +395,20 @@
           <div
             class="relative w-full text-[40px] font-bold uppercase leading-tight text-white"
           >
+          <span v-if="store.currentStep === store.getStep(1).value">
+            Три<br />
+            простых <br />
+            шага
+          </span>
+          <span v-else-if="store.currentStep === store.getStep(2).value">
+            Осталось<br />
+            совсем <br />
+            чучуть  
+          </span>
+          <span v-else>
             Вы это <br />
             сделали
+          </span>
           </div>
         </div>
         <!-- Petite Vue  https://github.com/vuejs/petite-vue-->
