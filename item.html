@@ -110,77 +110,30 @@
         data-anim-container="stager"
         class="pb-[100px] pt-[120px] md:pb-[140px] md:pt-[220px]"
       >
-        <div class="container">
+        <div data-anim class="container">
           <img
+            data-anim
             style="height: 400px"
             class="w-full rounded-md object-cover"
             :src="store.portfolioItem[0].images[0]"
             alt="benefits"
-            data-anim-container="stager"
           />
-          <div class="item">
-            <h2 data-anim class="item__h text-center">
+          <div class="item" data-anim>
+            <h2 class="item__h text-center">
               {{ store.portfolioItem[0].title }}
             </h2>
             <div class="item__desc">{{ store.portfolioItem[0].supTitle }}</div>
             <p class="item__type">{{ store.portfolioItem[0].desc }}</p>
           </div>
-          <h2 data-anim class="mb-[60px] text-center font-bold"></h2>
-          <div class="grid grid-cols-1 gap-5">
+          <div data-anim class="relative grid grid-cols-1 gap-5">
             <img
-              style="height: 400px"
+              v-for="(image, index) in store.portfolioItem[0].images"
+              style="height: 500px"
+              :key="index"
               class="h-full w-full rounded-md object-cover"
-              :src="store.portfolioItem[0].images[1]"
+              :src="image"
               alt="benefits"
-              data-anim-container="stager"
             />
-            <div class="grid grid-cols-2 gap-5">
-              <img
-                style="height: 400px"
-                class="h-full w-full rounded-md object-cover"
-                :src="store.portfolioItem[0].images[2]"
-                alt="benefits"
-                data-anim-container="stager"
-              />
-              <img
-                style="height: 400px"
-                class="h-full w-full rounded-md object-cover"
-                :src="store.portfolioItem[0].images[3]"
-                alt="benefits"
-                data-anim-container="stager"
-              />
-              
-            </div>
-            <img
-                style="height: 400px"
-                class="h-full w-full rounded-md object-cover"
-                :src="store.portfolioItem[0].images[4]"
-                alt="benefits"
-                data-anim-container="stager"
-              />
-              <img
-                style="height: 400px"
-                class="h-full w-full rounded-md object-cover"
-                :src="store.portfolioItem[0].images[5]"
-                alt="benefits"
-                data-anim-container="stager"
-              />
-              <div class="grid grid-cols-2 gap-5">
-                <img
-                  style="height: 400px"
-                  class="h-full w-full rounded-md object-cover"
-                  :src="store.portfolioItem[0].images[6]"
-                  alt="benefits"
-                  data-anim-container="stager"
-                />
-                <img
-                  style="height: 400px"
-                  class="h-full w-full rounded-md object-cover"
-                  :src="store.portfolioItem[0].images[7]"
-                  alt="benefits"
-                  data-anim-container="stager"
-                />
-              </div>
           </div>
         </div>
       </section>
@@ -395,20 +348,20 @@
           <div
             class="relative w-full text-[40px] font-bold uppercase leading-tight text-white"
           >
-          <span v-if="store.currentStep === store.getStep(1).value">
-            Три<br />
-            простых <br />
-            шага
-          </span>
-          <span v-else-if="store.currentStep === store.getStep(2).value">
-            Осталось<br />
-            совсем <br />
-            чучуть  
-          </span>
-          <span v-else>
-            Вы это <br />
-            сделали
-          </span>
+            <span v-if="store.currentStep === store.getStep(1).value">
+              Три<br />
+              простых <br />
+              шага
+            </span>
+            <span v-else-if="store.currentStep === store.getStep(2).value">
+              Осталось<br />
+              совсем <br />
+              чучуть
+            </span>
+            <span v-else>
+              Вы это <br />
+              сделали
+            </span>
           </div>
         </div>
         <!-- Petite Vue  https://github.com/vuejs/petite-vue-->
