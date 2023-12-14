@@ -118,12 +118,12 @@
             :src="store.portfolioItem[0].images[0]"
             alt="benefits"
           />
-          <div class="item" data-anim>
-            <h2 class="item__h text-center">
+          <div class="md:flex justify-around items-center item" data-anim>
+            <h2 class="item__h sm:ml-8">
               {{ store.portfolioItem[0].title }}
             </h2>
-            <div class="item__desc">{{ store.portfolioItem[0].supTitle }}</div>
-            <p class="item__type">{{ store.portfolioItem[0].desc }}</p>
+            <div class="item__desc sm:ml-8">{{ store.portfolioItem[0].supTitle }}</div>
+            <p class="item__type sm:ml-8">{{ store.portfolioItem[0].desc }}</p>
           </div>
           <div data-anim class="relative grid grid-cols-1 gap-5">
             <img
