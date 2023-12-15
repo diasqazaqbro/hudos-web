@@ -110,15 +110,14 @@
         data-anim-container="stager"
         class="pb-[100px] pt-[120px] md:pb-[140px] md:pt-[220px]"
       >
-        <div data-anim class="container">
+        <div class="container">
           <img
-            data-anim
             style="height: 400px"
             class="w-full rounded-md object-cover"
-            :src="store.portfolioItem[0].images[0]"
+            :src="store.portfolioItem[0].images.i1"
             alt="benefits"
           />
-          <div class="md:flex justify-around items-center item" data-anim>
+          <div class="md:flex justify-around items-center item">
             <h2 class="item__h sm:ml-8 sm:mb-4 md:mb-0">
               {{ store.portfolioItem[0].title }}
             </h2>
@@ -127,14 +126,48 @@
           </div>
           <div data-anim class="relative grid grid-cols-1 gap-5">
             <img
-              v-for="(image, index) in store.portfolioItem[0].images"
-              style="height: 800px"
-              :key="index"
-              class="h-full w-full rounded-md object-cover"
-              :src="image"
+              
+              class="h-[400px] w-full sm:h-[800px] rounded-md object-cover"
+              :src="store.portfolioItem[0].images.i2"
+              alt="benefits"
+            />
+            <img
+              
+              class="h-[400px] w-full sm:h-[800px] rounded-md object-cover"
+              :src="store.portfolioItem[0].images.i3"
+              alt="benefits"
+            />
+            <img
+              
+              class="h-[400px] w-full sm:h-[800px] rounded-md object-cover"
+              :src="store.portfolioItem[0].images.i4"
+              alt="benefits"
+            />
+            <img
+              
+              class="h-[400px] w-full sm:h-[800px] rounded-md object-cover"
+              :src="store.portfolioItem[0].images.i5"
+              alt="benefits"
+            />
+            <img
+              
+              class="h-[400px] w-full sm:h-[800px] rounded-md object-cover"
+              :src="store.portfolioItem[0].images.i6"
+              alt="benefits"
+            />
+            <img
+              
+              class="h-[400px] w-full sm:h-[800px] rounded-md object-cover"
+              :src="store.portfolioItem[0].images.i7"
               alt="benefits"
             />
           </div>
+          <img
+              
+              class="h-[400px] w-full sm:h-[800px] rounded-md object-cover"
+              :src="store.portfolioItem[0].images.i8"
+              alt="benefits"
+            />
         </div>
       </section>
     </main>

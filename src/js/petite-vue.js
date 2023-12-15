@@ -247,7 +247,7 @@ const store = reactive({
       const requests = []
 
       dataArray.forEach((item) => {
-        portfolioMap[item.imgId] = { ...item, images: [] }
+        portfolioMap[item.imgId] = { ...item, images: {} }
 
         for (let i = 1; i <= 8; i++) {
           const nextImgId = item.imgId + i
@@ -255,7 +255,7 @@ const store = reactive({
           requests.push(
             axios.get(`${apiUrl}/${nextImgId}`).then((response) => {
               const imagePath = response.data.image
-              portfolioMap[item.imgId].images.push(`${url}${imagePath}`)
+              portfolioMap[item.imgId].images[`i${i}`] = `${url}${imagePath}`
             })
           )
         }
@@ -264,33 +264,39 @@ const store = reactive({
       await Promise.all(requests)
 
       const portfolioArray = Object.values(portfolioMap)
-        store.fetchResult.portfolioAfter = portfolioArray;
+      store.fetchResult.portfolioAfter = portfolioArray
     }
 
     setTimeout(() => {
       imgFetch()
     }, 1000)
 
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
+    const queryString = window.location.search
+    const urlParams = new URLSearchParams(queryString)
 
-    const paramsId = urlParams.get('id');
+    const paramsId = urlParams.get('id')
 
     setTimeout(() => {
-      const filterPortfolio = store.fetchResult.portfolioAfter.filter(i => i._id === paramsId)
+      const filterPortfolio = store.fetchResult.portfolioAfter.filter(
+        (i) => i._id === paramsId
+      )
       store.portfolioItem = filterPortfolio
-    },2000)
+    }, 2000)
     setTimeout(() => {
-      const filterPortfolio = store.fetchResult.portfolioAfter.filter(i => i.construction === 'design')
+      const filterPortfolio = store.fetchResult.portfolioAfter.filter(
+        (i) => i.construction === 'design'
+      )
       store.designItem = filterPortfolio
-      console.log(store.designItem);
-    },1500)
+      console.log(store.designItem)
+    }, 1500)
 
     setTimeout(() => {
-      const filterPortfolio = store.fetchResult.portfolioAfter.filter(i => i.construction === 'architecture')
+      const filterPortfolio = store.fetchResult.portfolioAfter.filter(
+        (i) => i.construction === 'architecture'
+      )
       store.architectureItem = filterPortfolio
-      console.log(store.architectureItem);
-    },1500)
+      console.log(store.architectureItem)
+    }, 1500)
 
     axios.get('https://hudos-admin.vercel.app/api/portfolio').then((resp) => {
       store.fetchResult.portfolio = resp.data
