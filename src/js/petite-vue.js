@@ -355,6 +355,8 @@ const store = reactive({
     axios.get('https://hudos-admin.vercel.app/api/settings').then((resp) => {
       const settings = store.fetchResult.settings
       settings.number = resp.data[0].number
+      let number = document.getElementById("phone-number");
+      number.href = `tel:${resp.data[0].number}`
     })
 
     axios.get('https://hudos-admin.vercel.app/api/stages').then((resp) => {

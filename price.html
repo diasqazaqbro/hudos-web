@@ -40,7 +40,8 @@
         class="container relative flex h-full items-center justify-between md-m:max-w-full"
       >
         <a
-          href="tel:{{store.fetchResult.settings.number}}"
+        href="loading"
+        id="phone-number"
           class="group flex items-center space-x-2 transition-colors hover:underline"
         >
           <img class="md-m:h-6 md-m:w-6" src="./image/phone.svg" alt="phone" />
@@ -408,6 +409,11 @@
           <div class="md-m:mb-10">
             <div class="mb-5 text-xl font-light text-gray md:mb-7">Ссылки</div>
             <ul>
+              <li class="mb-5">
+                <a class="transition-colors hover:text-accent" href="price.html">
+                  Цены
+                </a>
+              </li>
               <li class="mb-5">
                 <a class="transition-colors hover:text-accent" href="#">
                   Услуги
