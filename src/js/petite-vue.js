@@ -298,11 +298,11 @@ const store = reactive({
       console.log(store.architectureItem)
     }, 1500)
 
-    axios.get('https://hudos-admin.vercel.app/api/portfolio').then((resp) => {
+    axios.get('https://hudos-get-serv-cyan.vercel.app/api/portfolio').then((resp) => {
       store.fetchResult.portfolio = resp.data
       store.portfolio = resp.data
     })
-    axios.get('https://hudos-admin.vercel.app/api/faq').then((resp) => {
+    axios.get('https://hudos-get-serv-cyan.vercel.app/api/faq').then((resp) => {
       const faq = store.fetchResult.faq
       faq.oneTitle = resp.data[0].oneTitle
       faq.oneSupTitle = resp.data[0].oneSupTitle
@@ -311,7 +311,7 @@ const store = reactive({
       faq.threeTitle = resp.data[0].threeTitle
       faq.threeSupTitle = resp.data[0].threeSupTitle
     })
-    axios.get('https://hudos-admin.vercel.app/api/objects').then((resp) => {
+    axios.get('https://hudos-get-serv-cyan.vercel.app/api/objects').then((resp) => {
       const objects = store.fetchResult.objects
       const responseData = resp.data[0]
       objects.mainNumber = parseInt(responseData.mainNumber, 10)
@@ -321,7 +321,7 @@ const store = reactive({
 
       this.doNumberAnimations()
     })
-    axios.get('https://hudos-admin.vercel.app/api/services').then((resp) => {
+    axios.get('https://hudos-get-serv-cyan.vercel.app/api/services').then((resp) => {
       const services = store.fetchResult.services
       services.oneTitle = resp.data[0].oneTitle
       services.oneSupTitle = resp.data[0].oneSupTitle
@@ -336,7 +336,7 @@ const store = reactive({
       services.fourSupTitle = resp.data[0].fourSupTitle
       services.fourDesc = resp.data[0].fourDesc
     })
-    axios.get('https://hudos-admin.vercel.app/api/price').then((resp) => {
+    axios.get('https://hudos-get-serv-cyan.vercel.app/api/price').then((resp) => {
       const price = store.fetchResult.price
       price.oneTitle = resp.data[0].oneTitle
       price.oneSupTitle = resp.data[0].oneSupTitle
@@ -352,14 +352,14 @@ const store = reactive({
       price.fourDesc = resp.data[0].fourDesc
     })
 
-    axios.get('https://hudos-admin.vercel.app/api/settings').then((resp) => {
+    axios.get('https://hudos-get-serv-cyan.vercel.app/api/settings').then((resp) => {
       const settings = store.fetchResult.settings
       settings.number = resp.data[0].number
       let number = document.getElementById("phone-number");
       number.href = `tel:${resp.data[0].number}`
     })
 
-    axios.get('https://hudos-admin.vercel.app/api/stages').then((resp) => {
+    axios.get('https://hudos-get-serv-cyan.vercel.app/api/stages').then((resp) => {
       const stages = store.fetchResult.stages
       stages.oneTitle = resp.data[0].oneTitle
       stages.oneDesc = resp.data[0].oneDesc
@@ -379,7 +379,7 @@ const store = reactive({
       stages.eightDesc = resp.data[0].eightDesc
     })
 
-    axios.get('https://hudos-admin.vercel.app/api/projects').then((resp) => {
+    axios.get('https://hudos-get-serv-cyan.vercel.app/api/projects').then((resp) => {
       const projects = store.fetchResult.projects
       projects.designTitleOne = resp.data[0].designTitleOne
       projects.designTitleTwo = resp.data[0].designTitleTwo
@@ -398,7 +398,7 @@ const store = reactive({
       projects.aLinkTwo = resp.data[0].aLinkTwo
       projects.aLinkThree = resp.data[0].aLinkThree
     })
-    axios.get('https://hudos-admin.vercel.app/api/footer').then((resp) => {
+    axios.get('https://hudos-get-serv-cyan.vercel.app/api/footer').then((resp) => {
       const footer = store.fetchResult.footer
       footer.address = resp.data[0].address
       footer.workTime = resp.data[0].workTime
@@ -409,13 +409,13 @@ const store = reactive({
       footer.partnerEmail = resp.data[0].partnerEmail
     })
 
-    axios.get('https://hudos-admin.vercel.app/api/welcome').then((resp) => {
+    axios.get('https://hudos-get-serv-cyan.vercel.app/api/welcome').then((resp) => {
       const welcome = store.fetchResult.welcome
       welcome.welcomeTitle = resp.data[0].welcomeTitle
       welcome.welcomeSupTitle = resp.data[0].welcomeSupTitle
       welcome.welcomeDesc = resp.data[0].welcomeDesc
     })
-    axios.get('https://hudos-admin.vercel.app/api/partners').then((resp) => {
+    axios.get('https://hudos-get-serv-cyan.vercel.app/api/partners').then((resp) => {
       const partners = store.fetchResult.partners
       partners.accent = resp.data[0].accent
       partners.title = resp.data[0].title
