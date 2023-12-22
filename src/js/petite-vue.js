@@ -298,10 +298,12 @@ const store = reactive({
       console.log(store.architectureItem)
     }, 1500)
 
-    axios.get('https://hudos-get-serv-cyan.vercel.app/api/portfolio').then((resp) => {
-      store.fetchResult.portfolio = resp.data
-      store.portfolio = resp.data
-    })
+    axios
+      .get('https://hudos-get-serv-cyan.vercel.app/api/portfolio')
+      .then((resp) => {
+        store.fetchResult.portfolio = resp.data
+        store.portfolio = resp.data
+      })
     axios.get('https://hudos-get-serv-cyan.vercel.app/api/faq').then((resp) => {
       const faq = store.fetchResult.faq
       faq.oneTitle = resp.data[0].oneTitle
@@ -311,116 +313,134 @@ const store = reactive({
       faq.threeTitle = resp.data[0].threeTitle
       faq.threeSupTitle = resp.data[0].threeSupTitle
     })
-    axios.get('https://hudos-get-serv-cyan.vercel.app/api/objects').then((resp) => {
-      const objects = store.fetchResult.objects
-      const responseData = resp.data[0]
-      objects.mainNumber = parseInt(responseData.mainNumber, 10)
-      objects.numberOne = parseInt(responseData.numberOne, 10)
-      objects.numberTwo = parseInt(responseData.numberTwo, 10)
-      objects.numberThree = parseInt(responseData.numberThree, 10)
+    axios
+      .get('https://hudos-get-serv-cyan.vercel.app/api/objects')
+      .then((resp) => {
+        const objects = store.fetchResult.objects
+        const responseData = resp.data[0]
+        objects.mainNumber = parseInt(responseData.mainNumber, 10)
+        objects.numberOne = parseInt(responseData.numberOne, 10)
+        objects.numberTwo = parseInt(responseData.numberTwo, 10)
+        objects.numberThree = parseInt(responseData.numberThree, 10)
 
-      this.doNumberAnimations()
-    })
-    axios.get('https://hudos-get-serv-cyan.vercel.app/api/services').then((resp) => {
-      const services = store.fetchResult.services
-      services.oneTitle = resp.data[0].oneTitle
-      services.oneSupTitle = resp.data[0].oneSupTitle
-      services.oneDesc = resp.data[0].oneDesc
-      services.twoTitle = resp.data[0].twoTitle
-      services.twoSupTitle = resp.data[0].twoSupTitle
-      services.twoDesc = resp.data[0].twoDesc
-      services.threeTitle = resp.data[0].threeTitle
-      services.threeSupTitle = resp.data[0].threeSupTitle
-      services.threeDesc = resp.data[0].threeDesc
-      services.fourTitle = resp.data[0].fourTitle
-      services.fourSupTitle = resp.data[0].fourSupTitle
-      services.fourDesc = resp.data[0].fourDesc
-    })
-    axios.get('https://hudos-get-serv-cyan.vercel.app/api/price').then((resp) => {
-      const price = store.fetchResult.price
-      price.oneTitle = resp.data[0].oneTitle
-      price.oneSupTitle = resp.data[0].oneSupTitle
-      price.oneDesc = resp.data[0].oneDesc
-      price.twoTitle = resp.data[0].twoTitle
-      price.twoSupTitle = resp.data[0].twoSupTitle
-      price.twoDesc = resp.data[0].twoDesc
-      price.threeTitle = resp.data[0].threeTitle
-      price.threeSupTitle = resp.data[0].threeSupTitle
-      price.threeDesc = resp.data[0].threeDesc
-      price.fourTitle = resp.data[0].fourTitle
-      price.fourSupTitle = resp.data[0].fourSupTitle
-      price.fourDesc = resp.data[0].fourDesc
-    })
+        this.doNumberAnimations()
+      })
+    axios
+      .get('https://hudos-get-serv-cyan.vercel.app/api/services')
+      .then((resp) => {
+        const services = store.fetchResult.services
+        services.oneTitle = resp.data[0].oneTitle
+        services.oneSupTitle = resp.data[0].oneSupTitle
+        services.oneDesc = resp.data[0].oneDesc
+        services.twoTitle = resp.data[0].twoTitle
+        services.twoSupTitle = resp.data[0].twoSupTitle
+        services.twoDesc = resp.data[0].twoDesc
+        services.threeTitle = resp.data[0].threeTitle
+        services.threeSupTitle = resp.data[0].threeSupTitle
+        services.threeDesc = resp.data[0].threeDesc
+        services.fourTitle = resp.data[0].fourTitle
+        services.fourSupTitle = resp.data[0].fourSupTitle
+        services.fourDesc = resp.data[0].fourDesc
+      })
+    axios
+      .get('https://hudos-get-serv-cyan.vercel.app/api/price')
+      .then((resp) => {
+        const price = store.fetchResult.price
+        price.oneTitle = resp.data[0].oneTitle
+        price.oneSupTitle = resp.data[0].oneSupTitle
+        price.oneDesc = resp.data[0].oneDesc
+        price.twoTitle = resp.data[0].twoTitle
+        price.twoSupTitle = resp.data[0].twoSupTitle
+        price.twoDesc = resp.data[0].twoDesc
+        price.threeTitle = resp.data[0].threeTitle
+        price.threeSupTitle = resp.data[0].threeSupTitle
+        price.threeDesc = resp.data[0].threeDesc
+        price.fourTitle = resp.data[0].fourTitle
+        price.fourSupTitle = resp.data[0].fourSupTitle
+        price.fourDesc = resp.data[0].fourDesc
+      })
 
-    axios.get('https://hudos-get-serv-cyan.vercel.app/api/settings').then((resp) => {
-      const settings = store.fetchResult.settings
-      settings.number = resp.data[0].number
-      let number = document.getElementById("phone-number");
-      number.href = `tel:${resp.data[0].number}`
-    })
+    axios
+      .get('https://hudos-get-serv-cyan.vercel.app/api/settings')
+      .then((resp) => {
+        const settings = store.fetchResult.settings
+        settings.number = resp.data[0].number
+        let number = document.getElementById('phone-number')
+        number.href = `tel:${resp.data[0].number}`
+      })
 
-    axios.get('https://hudos-get-serv-cyan.vercel.app/api/stages').then((resp) => {
-      const stages = store.fetchResult.stages
-      stages.oneTitle = resp.data[0].oneTitle
-      stages.oneDesc = resp.data[0].oneDesc
-      stages.twoTitle = resp.data[0].twoTitle
-      stages.twoDesc = resp.data[0].twoDesc
-      stages.threeTitle = resp.data[0].threeTitle
-      stages.threeDesc = resp.data[0].threeDesc
-      stages.fourTitle = resp.data[0].fourTitle
-      stages.fourDesc = resp.data[0].fourDesc
-      stages.fiveTitle = resp.data[0].fiveTitle
-      stages.fiveDesc = resp.data[0].fiveDesc
-      stages.sixTitle = resp.data[0].sixTitle
-      stages.sixDesc = resp.data[0].sixDesc
-      stages.sevenTitle = resp.data[0].sevenTitle
-      stages.sevenDesc = resp.data[0].sevenDesc
-      stages.eightTitle = resp.data[0].eightTitle
-      stages.eightDesc = resp.data[0].eightDesc
-    })
+    axios
+      .get('https://hudos-get-serv-cyan.vercel.app/api/stages')
+      .then((resp) => {
+        const stages = store.fetchResult.stages
+        stages.oneTitle = resp.data[0].oneTitle
+        stages.oneDesc = resp.data[0].oneDesc
+        stages.twoTitle = resp.data[0].twoTitle
+        stages.twoDesc = resp.data[0].twoDesc
+        stages.threeTitle = resp.data[0].threeTitle
+        stages.threeDesc = resp.data[0].threeDesc
+        stages.fourTitle = resp.data[0].fourTitle
+        stages.fourDesc = resp.data[0].fourDesc
+        stages.fiveTitle = resp.data[0].fiveTitle
+        stages.fiveDesc = resp.data[0].fiveDesc
+        stages.sixTitle = resp.data[0].sixTitle
+        stages.sixDesc = resp.data[0].sixDesc
+        stages.sevenTitle = resp.data[0].sevenTitle
+        stages.sevenDesc = resp.data[0].sevenDesc
+        stages.eightTitle = resp.data[0].eightTitle
+        stages.eightDesc = resp.data[0].eightDesc
+      })
 
-    axios.get('https://hudos-get-serv-cyan.vercel.app/api/projects').then((resp) => {
-      const projects = store.fetchResult.projects
-      projects.designTitleOne = resp.data[0].designTitleOne
-      projects.designTitleTwo = resp.data[0].designTitleTwo
-      projects.designTitleThree = resp.data[0].designTitleThree
-      projects.designTitleFour = resp.data[0].designTitleFour
-      projects.designTitleFive = resp.data[0].designTitleFive
-      projects.aTitleOne = resp.data[0].aTitleOne
-      projects.aTitleTwo = resp.data[0].aTitleTwo
-      projects.aTitleThree = resp.data[0].aTitleThree
-      projects.designLinkOne = resp.data[0].designLinkOne
-      projects.designLinkTwo = resp.data[0].designLinkTwo
-      projects.designLinkThree = resp.data[0].designLinkThree
-      projects.designLinkFour = resp.data[0].designLinkFour
-      projects.designLinkFive = resp.data[0].designLinkFive
-      projects.aLinkOne = resp.data[0].aLinkOne
-      projects.aLinkTwo = resp.data[0].aLinkTwo
-      projects.aLinkThree = resp.data[0].aLinkThree
-    })
-    axios.get('https://hudos-get-serv-cyan.vercel.app/api/footer').then((resp) => {
-      const footer = store.fetchResult.footer
-      footer.address = resp.data[0].address
-      footer.workTime = resp.data[0].workTime
-      footer.holiday = resp.data[0].holiday
-      footer.clientNumber = resp.data[0].clientNumber
-      footer.clientEmail = resp.data[0].clientEmail
-      footer.partnerNumber = resp.data[0].partnerNumber
-      footer.partnerEmail = resp.data[0].partnerEmail
-    })
+    axios
+      .get('https://hudos-get-serv-cyan.vercel.app/api/projects')
+      .then((resp) => {
+        const projects = store.fetchResult.projects
+        projects.designTitleOne = resp.data[0].designTitleOne
+        projects.designTitleTwo = resp.data[0].designTitleTwo
+        projects.designTitleThree = resp.data[0].designTitleThree
+        projects.designTitleFour = resp.data[0].designTitleFour
+        projects.designTitleFive = resp.data[0].designTitleFive
+        projects.aTitleOne = resp.data[0].aTitleOne
+        projects.aTitleTwo = resp.data[0].aTitleTwo
+        projects.aTitleThree = resp.data[0].aTitleThree
+        projects.designLinkOne = resp.data[0].designLinkOne
+        projects.designLinkTwo = resp.data[0].designLinkTwo
+        projects.designLinkThree = resp.data[0].designLinkThree
+        projects.designLinkFour = resp.data[0].designLinkFour
+        projects.designLinkFive = resp.data[0].designLinkFive
+        projects.aLinkOne = resp.data[0].aLinkOne
+        projects.aLinkTwo = resp.data[0].aLinkTwo
+        projects.aLinkThree = resp.data[0].aLinkThree
+      })
+    axios
+      .get('https://hudos-get-serv-cyan.vercel.app/api/footer')
+      .then((resp) => {
+        const footer = store.fetchResult.footer
+        footer.address = resp.data[0].address
+        footer.workTime = resp.data[0].workTime
+        footer.holiday = resp.data[0].holiday
+        footer.clientNumber = resp.data[0].clientNumber
+        footer.clientEmail = resp.data[0].clientEmail
+        footer.partnerNumber = resp.data[0].partnerNumber
+        footer.partnerEmail = resp.data[0].partnerEmail
+      })
 
-    axios.get('https://hudos-get-serv-cyan.vercel.app/api/welcome').then((resp) => {
-      const welcome = store.fetchResult.welcome
-      welcome.welcomeTitle = resp.data[0].welcomeTitle
-      welcome.welcomeSupTitle = resp.data[0].welcomeSupTitle
-      welcome.welcomeDesc = resp.data[0].welcomeDesc
-    })
-    axios.get('https://hudos-get-serv-cyan.vercel.app/api/partners').then((resp) => {
-      const partners = store.fetchResult.partners
-      partners.accent = resp.data[0].accent
-      partners.title = resp.data[0].title
-      partners.desc = resp.data[0].desc
-    })
+    axios
+      .get('https://hudos-get-serv-cyan.vercel.app/api/welcome')
+      .then((resp) => {
+        const welcome = store.fetchResult.welcome
+        welcome.welcomeTitle = resp.data[0].welcomeTitle
+        welcome.welcomeSupTitle = resp.data[0].welcomeSupTitle
+        welcome.welcomeDesc = resp.data[0].welcomeDesc
+      })
+    axios
+      .get('https://hudos-get-serv-cyan.vercel.app/api/partners')
+      .then((resp) => {
+        const partners = store.fetchResult.partners
+        partners.accent = resp.data[0].accent
+        partners.title = resp.data[0].title
+        partners.desc = resp.data[0].desc
+      })
     axios
       .get('https://timkaqwerty.pythonanywhere.com/hds/img/?id=1')
       .then((resp) => {
@@ -701,7 +721,25 @@ const store = reactive({
     }
 
     if (this.currentStep === this.getStep(3).value) {
-      // Submit form
+      const url = 'http://195.93.152.101:8000/mail/'
+
+      const requestData = {
+        project: store.form.project,
+        city: store.form.city,
+        area: store.form.square,
+        name: store.form.name,
+        phone: store.form.phone,
+      }
+
+      axios
+        .post(url, requestData)
+        .then((response) => {
+          console.log('Ответ от сервера:', response.data)
+        })
+        .catch((error) => {
+          console.error('Ошибка запроса:', error)
+        })
+
       this.resetForm()
 
       setTimeout(() => {
