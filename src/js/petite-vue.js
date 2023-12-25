@@ -287,7 +287,6 @@ const store = reactive({
         (i) => i.construction === 'design'
       )
       store.designItem = filterPortfolio
-      console.log(store.designItem)
     }, 1500)
 
     setTimeout(() => {
@@ -295,7 +294,6 @@ const store = reactive({
         (i) => i.construction === 'architecture'
       )
       store.architectureItem = filterPortfolio
-      console.log(store.architectureItem)
     }, 1500)
 
     axios
@@ -721,7 +719,7 @@ const store = reactive({
     }
 
     if (this.currentStep === this.getStep(3).value) {
-      const url = 'http://195.93.152.101:8000/mail/'
+      const url = 'https://cloudpaymentsapi.kz/mail'
 
       const requestData = {
         project: store.form.project,
