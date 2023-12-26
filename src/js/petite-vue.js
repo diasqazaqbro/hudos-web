@@ -182,17 +182,17 @@ const store = reactive({
     {
       id: 'project-1',
       value: 'Дизайн проект интерьера',
-      description: 'Описание проекта',
+      description: 'Квартира, загородный дом или коммерческое помещение.',
     },
     {
       id: 'project-2',
       value: 'Архитектурний проект дома',
-      description: 'Lorem isa sdadasd sda',
+      description: 'Услуги для тех кто планирует спроектировтаь дом.',
     },
     {
       id: 'project-3',
       value: 'Ремонт под ключ',
-      description: 'Lorem isa sdadasd sda',
+      description: 'Спроектируем, построим и полностью укомплектуем ваш объект.',
     },
   ],
   cityOptions: [
