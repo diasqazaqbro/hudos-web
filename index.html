@@ -631,6 +631,7 @@
       <section
         data-anim-container="stager"
         class="min-h-[875px] py-[80px] md:py-[130px]"
+        id="services"
       >
         <div
           class="container relative flex justify-between before:absolute before:left-[45%] before:h-full before:w-px before:bg-gray-light before:opacity-30 md-m:flex-col md-m:before:hidden"
@@ -1054,6 +1055,7 @@
       </section>
       <section
         data-anim-container="stager"
+        id="faq"
         class="py-[50px] pb-[100px] md:min-h-[785px] md:py-[130px] md:pb-[170px] lg:min-h-[730px]"
       >
         <div class="container flex md-m:flex-col md:justify-between">
@@ -1205,23 +1207,18 @@
                 </a>
               </li>
               <li class="mb-5">
+                <a class="transition-colors hover:text-accent" href="#services">
+                  Услуги
+                </a>
+              </li>
+              <li class="mb-5">
                 <a class="transition-colors hover:text-accent" href="portfolio.html">
                   Портфолио
                 </a>
               </li>
               <li class="mb-5">
-                <a class="transition-colors hover:text-accent" href="#">
-                  Полезная информация
-                </a>
-              </li>
-              <li class="mb-5">
-                <a class="transition-colors hover:text-accent" href="#">
+                <a class="transition-colors hover:text-accent" href="#faq">
                   FAQ
-                </a>
-              </li>
-              <li>
-                <a class="transition-colors hover:text-accent" href="#">
-                  Политика конфиденциальности
                 </a>
               </li>
             </ul>
@@ -1445,30 +1442,7 @@
                       class="font-light text-gray transition-colors group-hover/label:text-main peer-checked:text-main"
                     >
                       <span>{{value}}</span>
-                      <span class="group relative">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke-width="1.5"
-                          stroke="currentColor"
-                          class="inline h-6 w-6 text-gray transition-colors group-hover:text-accent"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"
-                          />
-                        </svg>
-                        <span
-                          class="pointer-events-none absolute left-1/2 top-full z-20 mt-3 w-40 -translate-x-1/2 rounded border border-accent bg-bgc px-4 py-[6px] text-center text-sm opacity-0 transition-opacity group-hover:opacity-100"
-                        >
-                          <span
-                            class="absolute -top-1 left-1/2 -z-10 h-2 w-2 -translate-x-1/2 rotate-45 rounded-sm border-l border-t border-accent bg-bgc"
-                          ></span>
-                          {{ description }}
-                        </span>
-                      </span>
+                      
                     </span>
                   </label>
                 </li>
@@ -1519,30 +1493,7 @@
                       class="font-light text-gray transition-colors group-hover/label:text-main peer-checked:text-main"
                     >
                       <span>{{value}}</span>
-                      <span class="group relative">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke-width="1.5"
-                          stroke="currentColor"
-                          class="inline h-6 w-6 text-gray transition-colors group-hover:text-accent"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"
-                          />
-                        </svg>
-                        <span
-                          class="pointer-events-none absolute left-1/2 top-full z-20 mt-3 w-40 -translate-x-1/2 rounded border border-accent bg-bgc px-4 py-[6px] text-center text-sm opacity-0 transition-opacity group-hover:opacity-100"
-                        >
-                          <span
-                            class="absolute -top-1 left-1/2 -z-10 h-2 w-2 -translate-x-1/2 rotate-45 rounded-sm border-l border-t border-accent bg-bgc"
-                          ></span>
-                          {{ description }}
-                        </span>
-                      </span>
+                      
                     </span>
                   </label>
                 </li>
