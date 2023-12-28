@@ -218,38 +218,6 @@
                 </a>
               </li>
               <li class="mb-5">
-                <a class="transition-colors hover:text-accent" href="portfolio.html">
-                  Портфолио
-                </a>
-              </li>
-              <li class="mb-5">
-                <a class="transition-colors hover:text-accent" href="#">
-                  Полезная информация
-                </a>
-              </li>
-              <li class="mb-5">
-                <a class="transition-colors hover:text-accent" href="#">
-                  FAQ
-                </a>
-              </li>
-              <li>
-                <a class="transition-colors hover:text-accent" href="#">
-                  Политика конфиденциальности
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="md-m:mb-10">
-            <div class="mb-5 text-xl font-light text-gray md:mb-7">
-              Для клиентов
-            </div>
-            <ul>
-              <li class="mb-5">
-                <a class="transition-colors hover:text-accent" href="price.html">
-                  Цены
-                </a>
-              </li>
-              <li class="mb-5">
                 <a class="transition-colors hover:text-accent" href="index.html#services">
                   Услуги
                 </a>
@@ -262,6 +230,64 @@
               <li class="mb-5">
                 <a class="transition-colors hover:text-accent" href="index.html#faq">
                   FAQ
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="md-m:mb-10">
+            <div class="mb-5 text-xl font-light text-gray md:mb-7">
+              Для клиентов
+            </div>
+            <ul>
+              <li class="mb-5">
+                <a
+                  href="#"
+                  class="flex items-baseline transition-colors hover:text-accent"
+                >
+                  <div class="mr-3 shrink-0">
+                    <img
+                      class="w-4"
+                      src="./image/location.svg"
+                      alt="location"
+                    />
+                  </div>
+                  <div>
+                    <div>{{store.fetchResult.footer.address}}</div>
+                    <p class="mt-2 text-gray">
+                      Время работы: {{store.fetchResult.footer.workTime}}<br />
+                      Выходные: {{store.fetchResult.footer.holiday}}
+                    </p>
+                  </div>
+                </a>
+              </li>
+              <li class="mb-5">
+                <a
+                  href="tel:{{store.fetchResult.footer.clientNumber}}"
+                  class="flex items-center transition-colors hover:text-accent"
+                >
+                  <div class="mr-3 shrink-0">
+                    <img
+                      class="w-4"
+                      src="./image/phone-footer.svg"
+                      alt="phone"
+                    />
+                  </div>
+                  <div>
+                    <div>{{store.fetchResult.footer.clientNumber}}</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:{{store.fetchResult.footer.clientEmail}}"
+                  class="flex items-center transition-colors hover:text-accent"
+                >
+                  <div class="mr-3 shrink-0">
+                    <img class="w-4" src="./image/mail.png" alt="mail" />
+                  </div>
+                  <div>
+                    <div>{{store.fetchResult.footer.clientEmail}}</div>
+                  </div>
                 </a>
               </li>
             </ul>

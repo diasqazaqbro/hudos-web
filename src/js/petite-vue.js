@@ -192,7 +192,8 @@ const store = reactive({
     {
       id: 'project-3',
       value: 'Ремонт под ключ',
-      description: 'Спроектируем, построим и полностью укомплектуем ваш объект.',
+      description:
+        'Спроектируем, построим и полностью укомплектуем ваш объект.',
     },
   ],
   cityOptions: [
@@ -791,6 +792,17 @@ const store = reactive({
 })
 // Components
 
+const anchors = document.querySelectorAll('a[href*="#"]')
+for (let anchor of anchors) {
+  anchor.addEventListener('click', function (event) {
+    event.preventDefault()
+    const blockID = anchor.getAttribute('href')
+    document.querySelector('' + blockID).scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    })
+  })
+}
 function Btn({ value }) {
   return {
     $template: '#btn-template',
