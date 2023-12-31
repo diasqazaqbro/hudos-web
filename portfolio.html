@@ -370,7 +370,9 @@
     <!-- End Footer -->
 
     <!-- Scroll up button -->
-    <div class="fixed-bottom-right">
+    <div v-if="!store.isModalOpen"
+         class="fixed-bottom-right"
+    >
       <a
         href="#"
         data-scroll-up
