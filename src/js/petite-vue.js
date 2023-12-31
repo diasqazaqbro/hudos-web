@@ -222,7 +222,7 @@ const store = reactive({
   // fetchImg(id, number) {
   //   console.log(number)
   //   axios
-  //     .get(`https://api.reddel.kz/api/get_portfolio_images/` + number)
+  //     .get(`https://api.reddel.kz/get_portfolio_images/` + number)
   //     .then((resp) => {
   //       let result = 'https://api.reddel.kz' + resp.data.image
   //       this.fetchedImg.push({
@@ -240,7 +240,7 @@ const store = reactive({
   fetchedImg: [],
   fetchData() {
     async function imgFetch() {
-      const apiUrl = 'https://api.reddel.kz/api/get_portfolio_images'
+      const apiUrl = 'https://api.reddel.kz/get_portfolio_images'
       const dataArray = store.fetchResult.portfolio
       const url = 'https://api.reddel.kz'
       const portfolioMap = {}
